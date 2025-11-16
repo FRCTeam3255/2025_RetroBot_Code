@@ -4,11 +4,17 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix6.hardware.TalonFX;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.RobotMap.mapMotion;
 
 public class Motion extends SubsystemBase {
   /** Creates a new Motion. */
-  public Motion() {}
+  final TalonFX controlPanelWheelMotor = new TalonFX(mapMotion.CONTROL_PANEL_WHEEL_CAN);
+
+  public Motion() {
+  }
 
   @Override
   public void periodic() {
