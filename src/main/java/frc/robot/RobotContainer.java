@@ -29,6 +29,7 @@ import edu.wpi.first.epilogue.NotLogged;
 
 @Logged
 public class RobotContainer {
+
   @NotLogged
   SendableChooser<Command> autoChooser = new SendableChooser<>();
 
@@ -37,6 +38,7 @@ public class RobotContainer {
   private final SN_XboxController conDriver = new SN_XboxController(mapControllers.DRIVER_USB);
 
   private final Drivetrain subDrivetrain = new Drivetrain();
+  public final static Rotors rotorsInstance = new Rotors();
   private final DriverStateMachine subDriverStateMachine = new DriverStateMachine(subDrivetrain);
   private final StateMachine subStateMachine = new StateMachine(subDrivetrain);
   private final RobotPoses robotPose = new RobotPoses(subDrivetrain);
