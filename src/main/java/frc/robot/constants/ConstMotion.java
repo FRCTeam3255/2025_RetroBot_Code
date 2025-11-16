@@ -6,13 +6,11 @@ package frc.robot.constants;
 
 /** Add your docs here. */
 public class ConstMotion {
-  public static class Climber {
+  
     public static final double EXTEND_CLIMBER_MOTOR_SPEED = 0.5;
 
     public static final double STOP_CLIMBER_MOTOR = 0;
-
-    public static final double RETRACT_CLIMBER_MOTOR_SPEED = 0;
-  }
+  
 
   public static final double RETRACT_CLIMBER_MOTOR_SPEED = -0.5;
 

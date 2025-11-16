@@ -19,7 +19,7 @@ public class PrepClimb extends Command {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    RobotContainer.motionInstance.extendClimber(ConstMotion.Climber.EXTEND_CLIMBER_MOTOR_SPEED);
+    RobotContainer.motionInstance.extendClimber(ConstMotion.EXTEND_CLIMBER_MOTOR_SPEED);
 
   }
 

@@ -34,6 +34,6 @@ public class RobotMap {
 
   public static class mapMotion {
 
-    public static final int CLIMBER_CAN = 10;
+    public static final int CLIMBER_CAN = 20;
   }
 }

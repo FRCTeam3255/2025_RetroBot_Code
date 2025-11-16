@@ -16,10 +16,10 @@ import pabeles.concurrency.ConcurrencyOps.NewInstance;
 
 public class Motion extends SubsystemBase {
   /** Creates a new Motion. */
+  final TalonFX Climber = new TalonFX(RobotMap.mapMotion.CLIMBER_CAN);
   public Motion() {
   }
 
-  final TalonFX Climber = new TalonFX(RobotMap.mapMotion.CLIMBER_CAN);
 
   @Override
   public void periodic() {
@@ -32,7 +32,7 @@ public class Motion extends SubsystemBase {
   }
 
   public void stopClimb() {
-    Climber.set(ConstMotion.Climber.STOP_CLIMBER_MOTOR);
+    Climber.set(ConstMotion.STOP_CLIMBER_MOTOR);
   }
   public void retractClimber(double speed){
     Climber.set(speed);
