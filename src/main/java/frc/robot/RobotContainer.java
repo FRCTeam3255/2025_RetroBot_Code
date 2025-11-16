@@ -42,7 +42,7 @@ public class RobotContainer {
   private final DriverStateMachine subDriverStateMachine = new DriverStateMachine(subDrivetrain);
   private final StateMachine subStateMachine = new StateMachine(subDrivetrain);
   private final RobotPoses robotPose = new RobotPoses(subDrivetrain);
-
+  public static final Motion motionInstance = new Motion();
   Command TRY_NONE = Commands.deferredProxy(
       () -> subStateMachine.tryState(RobotState.NONE));
 

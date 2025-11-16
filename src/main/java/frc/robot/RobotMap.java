@@ -32,6 +32,10 @@ public class RobotMap {
     public static final int BACK_RIGHT_ABSOLUTE_ENCODER_CAN = 3;
   }
 
+  public static class mapMotion {
+
+    public static final int CLIMBER_CAN = 20;
+  }
   public static class mapRotors {
     public static final int INTAKE_CAN = 10;
     public static final int FUNNELBELT_CAN = 11;
