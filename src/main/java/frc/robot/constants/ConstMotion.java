@@ -14,4 +14,6 @@ public class ConstMotion {
 
   public static final double RETRACT_CLIMBER_MOTOR_SPEED = -0.5;
 
+  public static final double ANGLE_HOOD_SPEED = 0.5;
+
 }

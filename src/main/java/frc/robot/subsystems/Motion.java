@@ -6,6 +6,7 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix6.hardware.TalonFX;
 
+import edu.wpi.first.wpilibj.motorcontrol.Talon;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.RobotMap;
 import frc.robot.constants.ConstMotion;
@@ -16,9 +17,10 @@ import frc.robot.constants.ConstMotion;
 public class Motion extends SubsystemBase {
   /** Creates a new Motion. */
   final TalonFX Climber = new TalonFX(RobotMap.mapMotion.CLIMBER_CAN);
+  final TalonFX Hood = new TalonFX(RobotMap.mapMotion.HOOD_CAN);
   public Motion() {
+   
   }
-
 
   @Override
   public void periodic() {
@@ -35,5 +37,9 @@ public class Motion extends SubsystemBase {
   }
   public void retractClimber(double speed){
     Climber.set(speed);
+  }
+
+  public void angleHood(double speed){
+    Hood.set(speed);
   }
 }

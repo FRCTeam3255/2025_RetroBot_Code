@@ -35,9 +35,13 @@ public class RobotMap {
   public static class mapMotion {
 
     public static final int CLIMBER_CAN = 20;
+    public static final int HOOD_CAN = 21;
+
   }
+
   public static class mapRotors {
     public static final int INTAKE_CAN = 10;
     public static final int FUNNELBELT_CAN = 11;
+    public static final int FLYWHEEL_CAN = 12;
   }
 }
