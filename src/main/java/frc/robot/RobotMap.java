@@ -33,7 +33,7 @@ public class RobotMap {
   }
 
   public static class mapRotors {
-    public static final int INTAKE_CAN = 0;
-    public static final int FUNNELBELT_CAN = 1;
+    public static final int INTAKE_CAN = 10;
+    public static final int FUNNELBELT_CAN = 11;
   }
 }
