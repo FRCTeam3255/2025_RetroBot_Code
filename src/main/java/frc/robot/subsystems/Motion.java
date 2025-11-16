@@ -9,7 +9,6 @@ import com.ctre.phoenix6.hardware.TalonFX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.RobotMap;
 import frc.robot.constants.ConstMotion;
-import pabeles.concurrency.ConcurrencyOps.NewInstance;
 // import frc.robot.subsystems.Climber; // Ensure Climber class exists in this package
 // Uncomment and adjust the import below if Climber is in a different package
 // import frc.robot.someotherpackage.Climber;
