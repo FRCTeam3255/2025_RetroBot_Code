@@ -12,15 +12,12 @@ import frc.robot.constants.ConstRotors;
 
 public class Rotors extends SubsystemBase {
   /** Creates a new Rotors. */
-  TalonFX intakeMotor;
-  TalonFX funnelbeltMotor;
+  final TalonFX intakeMotor = new TalonFX(mapRotors.INTAKE_CAN);
+  final TalonFX funnelBeltMotor = new TalonFX(mapRotors.FUNNELBELT_CAN);
 
   public Rotors() {
-    intakeMotor = new TalonFX(mapRotors.INTAKE_CAN);
-    funnelbeltMotor = new TalonFX(mapRotors.FUNNELBELT_CAN);
-
     intakeMotor.getConfigurator().apply(ConstRotors.INTAKE_CONFIGURATION);
-    funnelbeltMotor.getConfigurator().apply(ConstRotors.FUNNELBELT_CONFIGURATION);
+    funnelBeltMotor.getConfigurator().apply(ConstRotors.FUNNELBELT_CONFIGURATION);
   }
 
   public void setIntakeMotorSpeed(double speed) {
@@ -28,7 +25,7 @@ public class Rotors extends SubsystemBase {
   }
 
   public void setFunnelbeltMotorSpeed(double speed) {
-    funnelbeltMotor.set(speed);
+    funnelBeltMotor.set(speed);
   }
 
   @Override
