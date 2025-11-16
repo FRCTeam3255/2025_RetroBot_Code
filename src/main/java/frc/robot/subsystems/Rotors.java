@@ -8,7 +8,10 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Rotors extends SubsystemBase {
   /** Creates a new Rotors. */
-  public Rotors() {}
+  public Rotors() {
+    
+  }
+  
 
   @Override
   public void periodic() {
