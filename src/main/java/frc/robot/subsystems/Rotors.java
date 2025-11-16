@@ -17,14 +17,14 @@ public class Rotors extends SubsystemBase {
 
   public Rotors() {
     intakeMotor.getConfigurator().apply(ConstRotors.INTAKE_CONFIGURATION);
-    funnelBeltMotor.getConfigurator().apply(ConstRotors.FUNNELBELT_CONFIGURATION);
+    funnelBeltMotor.getConfigurator().apply(ConstRotors.FUNNEL_BELT_CONFIGURATION);
   }
 
   public void setIntakeMotorSpeed(double speed) {
     intakeMotor.set(speed);
   }
 
-  public void setFunnelbeltMotorSpeed(double speed) {
+  public void setFunnelBeltMotorSpeed(double speed) {
     funnelBeltMotor.set(speed);
   }
 
@@ -32,4 +32,5 @@ public class Rotors extends SubsystemBase {
   public void periodic() {
     // This method will be called once per scheduler run
   }
+
 }
