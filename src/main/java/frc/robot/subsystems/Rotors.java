@@ -4,14 +4,33 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix6.hardware.TalonFX;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.RobotMap.mapRotors;
+import frc.robot.constants.ConstRotors;
 
 public class Rotors extends SubsystemBase {
   /** Creates a new Rotors. */
-  public Rotors() {}
+  final TalonFX intakeMotor = new TalonFX(mapRotors.INTAKE_CAN);
+  final TalonFX funnelBeltMotor = new TalonFX(mapRotors.FUNNELBELT_CAN);
+
+  public Rotors() {
+    intakeMotor.getConfigurator().apply(ConstRotors.INTAKE_CONFIGURATION);
+    funnelBeltMotor.getConfigurator().apply(ConstRotors.FUNNEL_BELT_CONFIGURATION);
+  }
+
+  public void setIntakeMotorSpeed(double speed) {
+    intakeMotor.set(speed);
+  }
+
+  public void setFunnelBeltMotorSpeed(double speed) {
+    funnelBeltMotor.set(speed);
+  }
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
   }
+
 }
