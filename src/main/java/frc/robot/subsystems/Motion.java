@@ -16,13 +16,19 @@ import frc.robot.constants.ConstMotion;
 public class Motion extends SubsystemBase {
   /** Creates a new Motion. */
   final TalonFX Climber = new TalonFX(RobotMap.mapMotion.CLIMBER_CAN);
+  final TalonFX controlPanelWheelMotor = new TalonFX(RobotMap.mapMotion.CONTROL_PANEL_WHEEL_CAN);
+
   public Motion() {
   }
-
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+  }
+
+  public void setControlPanelSpeed(double speed) {
+    controlPanelWheelMotor.set(speed);
+
   }
 
   public void extendClimber(double speed) {
@@ -33,7 +39,8 @@ public class Motion extends SubsystemBase {
   public void stopClimb() {
     Climber.set(ConstMotion.STOP_CLIMBER_MOTOR);
   }
-  public void retractClimber(double speed){
+
+  public void retractClimber(double speed) {
     Climber.set(speed);
   }
 }
