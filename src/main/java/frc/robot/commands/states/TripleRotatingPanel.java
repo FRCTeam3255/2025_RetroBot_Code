@@ -6,7 +6,7 @@ package frc.robot.commands.states;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.RobotContainer;
-import frc.robot.constants.ConstRotors;
+import frc.robot.constants.ConstMotion;
 
 /* You should consider using the more terse Command factories API instead https://docs.wpilib.org/en/stable/docs/software/commandbased/organizing-command-based.html#defining-commands */
 public class TripleRotatingPanel extends Command {
@@ -18,7 +18,7 @@ public class TripleRotatingPanel extends Command {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    RobotContainer.motionInstance.setControlPanelSpeed(ConstRotors.TRIPLE_ROTATING_PANEL_SPEED);
+    RobotContainer.motionInstance.setControlPanelSpeed(ConstMotion.TRIPLE_ROTATING_PANEL_SPEED);
   }
 
   // Called every time the scheduler runs while the command is scheduled.

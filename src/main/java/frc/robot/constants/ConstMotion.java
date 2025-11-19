@@ -15,4 +15,6 @@ public class ConstMotion {
 
   public static final double COLOR_ROTATING_PANEL_SPEED = 0.5;
 
+  public static final double TRIPLE_ROTATING_PANEL_SPEED = 0.3;
+
 }

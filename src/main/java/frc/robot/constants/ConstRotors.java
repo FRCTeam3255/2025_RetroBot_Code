@@ -14,8 +14,6 @@ public class ConstRotors {
   public static final TalonFXConfiguration FUNNEL_BELT_CONFIGURATION = new TalonFXConfiguration();
   public static final double FUNNEL_BELT_SPEED = 0.5;
   public static final double INTAKE_MOTOR_SPEED = 0.5;
-  public static final double COLOR_ROTATING_PANEL_SPEED = 0.3;
-  public static final double TRIPLE_ROTATING_PANEL_SPEED = 0.3;
   static {
 
     // TODO: replace configurations with real values
