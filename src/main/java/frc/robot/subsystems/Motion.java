@@ -21,9 +21,9 @@ public class Motion extends SubsystemBase {
 
   public Motion() {
     // Apply configuration to Climber motor
-    Climber.getConfigurator().apply(ConstMotion.CLIMBER_CONFIG);
+    Climber.getConfigurator().apply(ConstMotion.CLIMBER_CONFIGURATION);
     // Apply configuration to Hood motor
-    Hood.getConfigurator().apply(ConstMotion.HOOD_CONFIG);
+    Hood.getConfigurator().apply(ConstMotion.HOOD_CONFIGURATION);
   }
 
   @Override
@@ -49,7 +49,7 @@ public class Motion extends SubsystemBase {
     Climber.set(speed);
   }
 
-  public void angleHood(double speed){
+  public void angleHood(double speed) {
     Hood.set(speed);
   }
 }

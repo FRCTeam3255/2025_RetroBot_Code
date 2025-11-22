@@ -4,6 +4,10 @@
 
 package frc.robot.constants;
 
+import com.ctre.phoenix6.configs.TalonFXConfiguration;
+import com.ctre.phoenix6.signals.InvertedValue;
+import com.ctre.phoenix6.signals.NeutralModeValue;
+
 /** Add your docs here. */
 public class ConstMotion {
 
@@ -19,4 +23,14 @@ public class ConstMotion {
 
   public static final double TRIPLE_ROTATING_PANEL_SPEED = 0.3;
 
+  public static final TalonFXConfiguration CLIMBER_CONFIGURATION = new TalonFXConfiguration();
+
+  public static final TalonFXConfiguration HOOD_CONFIGURATION = new TalonFXConfiguration();
+  {
+    CLIMBER_CONFIGURATION.MotorOutput.NeutralMode = NeutralModeValue.Brake;
+    CLIMBER_CONFIGURATION.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
+
+    HOOD_CONFIGURATION.MotorOutput.NeutralMode = NeutralModeValue.Brake;
+    HOOD_CONFIGURATION.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
+  }
 }
