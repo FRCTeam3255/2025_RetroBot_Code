@@ -13,7 +13,7 @@ import frc.robot.constants.ConstRotors;
 public class Rotors extends SubsystemBase {
   /** Creates a new Rotors. */
   final TalonFX intakeMotor = new TalonFX(mapRotors.INTAKE_CAN);
-  final TalonFX funnelBeltMotor = new TalonFX(mapRotors.FUNNELBELT_CAN);
+  final TalonFX funnelBeltMotor = new TalonFX(mapRotors.FUNNEL_BELT_CAN);
   final TalonFX flywheelMotor = new TalonFX(mapRotors.FLYWHEEL_CAN);
 
   public Rotors() {
