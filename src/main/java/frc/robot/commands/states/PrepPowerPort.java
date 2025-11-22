@@ -19,7 +19,7 @@ public class PrepPowerPort extends Command {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    RobotContainer.rotorsInstance.flywheelSpeed(ConstRotors.FLYWHEEL_SPEED);
+    RobotContainer.rotorsInstance.setFlywheelMotorSpeed(ConstRotors.FLYWHEEL_SPEED);
     RobotContainer.motionInstance.angleHood(ConstMotion.ANGLE_HOOD_SPEED);
   }
 
@@ -31,7 +31,7 @@ public class PrepPowerPort extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    RobotContainer.rotorsInstance.flywheelSpeed(0);
+    RobotContainer.rotorsInstance.setFlywheelMotorSpeed(0);
     RobotContainer.motionInstance.angleHood(0);
   }
 
