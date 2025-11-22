@@ -29,7 +29,7 @@ public class Rotors extends SubsystemBase {
     funnelBeltMotor.set(speed);
   }
 
-  public void flywheelSpeed(double speed) {
+  public void setFlywheelMotorSpeed(double speed) {
     flywheelMotor.set(speed);
 
   }
