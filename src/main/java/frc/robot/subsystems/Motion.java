@@ -15,10 +15,15 @@ import frc.robot.constants.ConstMotion;
 
 public class Motion extends SubsystemBase {
   /** Creates a new Motion. */
-  final TalonFX Climber = new TalonFX(RobotMap.mapMotion.CLIMBER_CAN);
+  final TalonFX climber = new TalonFX(RobotMap.mapMotion.CLIMBER_CAN);
+  final TalonFX hood = new TalonFX(RobotMap.mapMotion.HOOD_CAN);
   final TalonFX controlPanelWheelMotor = new TalonFX(RobotMap.mapMotion.CONTROL_PANEL_WHEEL_CAN);
 
   public Motion() {
+    // Apply configuration to Climber motor
+    climber.getConfigurator().apply(ConstMotion.CLIMBER_CONFIGURATION);
+    // Apply configuration to Hood motor
+    hood.getConfigurator().apply(ConstMotion.HOOD_CONFIGURATION);
   }
 
   @Override
@@ -32,15 +37,19 @@ public class Motion extends SubsystemBase {
   }
 
   public void extendClimber(double speed) {
-    Climber.set(speed);
+    climber.set(speed);
 
   }
 
   public void stopClimb() {
-    Climber.set(ConstMotion.STOP_CLIMBER_MOTOR);
+    climber.set(ConstMotion.STOP_CLIMBER_MOTOR);
   }
 
   public void retractClimber(double speed) {
-    Climber.set(speed);
+    climber.set(speed);
+  }
+
+  public void angleHood(double speed) {
+    hood.set(speed);
   }
 }
