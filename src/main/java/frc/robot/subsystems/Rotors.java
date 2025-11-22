@@ -19,6 +19,7 @@ public class Rotors extends SubsystemBase {
   public Rotors() {
     intakeMotor.getConfigurator().apply(ConstRotors.INTAKE_CONFIGURATION);
     funnelBeltMotor.getConfigurator().apply(ConstRotors.FUNNEL_BELT_CONFIGURATION);
+    flywheelMotor.getConfigurator().apply(ConstRotors.FLYWHEEL_CONFIGURATION);
   }
 
   public void setIntakeMotorSpeed(double speed) {
