@@ -20,7 +20,10 @@ public class Motion extends SubsystemBase {
   final TalonFX controlPanelWheelMotor = new TalonFX(RobotMap.mapMotion.CONTROL_PANEL_WHEEL_CAN);
 
   public Motion() {
-   
+    // Apply configuration to Climber motor
+    Climber.getConfigurator().apply(ConstMotion.CLIMBER_CONFIG);
+    // Apply configuration to Hood motor
+    Hood.getConfigurator().apply(ConstMotion.HOOD_CONFIG);
   }
 
   @Override
