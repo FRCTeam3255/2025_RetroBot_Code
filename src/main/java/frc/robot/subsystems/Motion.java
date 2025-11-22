@@ -36,17 +36,9 @@ public class Motion extends SubsystemBase {
 
   }
 
-  public void extendClimber(double speed) {
+  public void setClimberSpeed(double speed) {
     climber.set(speed);
 
-  }
-
-  public void stopClimb() {
-    climber.set(ConstMotion.STOP_CLIMBER_MOTOR);
-  }
-
-  public void retractClimber(double speed) {
-    climber.set(speed);
   }
 
   public void angleHood(double speed) {
