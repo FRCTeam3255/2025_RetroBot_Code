@@ -31,22 +31,13 @@ public class Motion extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 
-  public void setControlPanelSpeed(double speed) {
+  public void setControlPanelSpeed(double speed){
     controlPanelWheelMotor.set(speed);
-
   }
 
-  public void extendClimber(double speed) {
+  public void setClimberSpeed(double speed) {
     climber.set(speed);
 
-  }
-
-  public void stopClimb() {
-    climber.set(ConstMotion.STOP_CLIMBER_MOTOR);
-  }
-
-  public void retractClimber(double speed) {
-    climber.set(speed);
   }
 
   public void angleHood(double speed) {

@@ -18,6 +18,16 @@ import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.DeferredCommand;
 import frc.robot.RobotMap.mapControllers;
 import frc.robot.commands.*;
+import frc.robot.commands.states.Climbing;
+import frc.robot.commands.states.ColorRotatingPanel;
+import frc.robot.commands.states.Intaking;
+import frc.robot.commands.states.PrepClimb;
+import frc.robot.commands.states.PrepCloseTrench;
+import frc.robot.commands.states.PrepFarTrench;
+import frc.robot.commands.states.PrepPanel;
+import frc.robot.commands.states.PrepPowerPort;
+import frc.robot.commands.states.Shooting;
+import frc.robot.commands.states.TripleRotatingPanel;
 import frc.robot.constants.ConstField;
 import frc.robot.constants.ConstSystem.constControllers;
 import frc.robot.subsystems.*;
@@ -36,6 +46,7 @@ public class RobotContainer {
   private AutoFactory autoFactory;
 
   private final SN_XboxController conDriver = new SN_XboxController(mapControllers.DRIVER_USB);
+  private final SN_XboxController conOperator = new SN_XboxController(mapControllers.OPERATOR_USB);
 
   private final Drivetrain subDrivetrain = new Drivetrain();
   public final static Rotors rotorsInstance = new Rotors();
@@ -91,6 +102,9 @@ public class RobotContainer {
     conDriver.btn_X
         .whileTrue(EXAMPLE_POSE_DRIVE)
         .onFalse(Commands.runOnce(() -> subDriverStateMachine.setDriverState(DriverState.MANUAL)));
+
+    conDriver.btn_Start.whileTrue(new PrepClimb());
+    conDriver.btn_Back.whileTrue(new Climbing());
   }
 
   public void configAutonomous() {
@@ -122,6 +136,15 @@ public class RobotContainer {
 
   private void configOperatorBindings() {
     // Add operator bindings here if needed
+    conOperator.btn_RightTrigger.whileTrue(new Shooting());
+    conOperator.btn_LeftTrigger.whileTrue(new Intaking());
+    conOperator.btn_Y.whileTrue(new PrepPowerPort());
+    conOperator.btn_B.whileTrue(new PrepFarTrench());
+    conOperator.btn_X.whileTrue(new PrepCloseTrench());
+    conOperator.btn_West.whileTrue(new TripleRotatingPanel());
+    conOperator.btn_East.whileTrue(new ColorRotatingPanel());
+    conOperator.btn_North.whileTrue(new PrepPanel());
+    
   }
 
   public RobotState getRobotState() {
