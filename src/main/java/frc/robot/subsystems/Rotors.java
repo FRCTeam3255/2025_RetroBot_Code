@@ -29,11 +29,11 @@ public class Rotors extends SubsystemBase {
     intakeMotor.set(speed);
   }
 
-  public void hopperRightMotorSpeed(double speed) {
+  public void setHopperRightMotorSpeed(double speed) {
     rightHopperMotor.set(speed);
   }
 
-  public void hopperLeftMotorSpeed(double speed){
+  public void setHopperLeftMotorSpeed(double speed){
     leftHopperMotor.set(speed);
 
   }
