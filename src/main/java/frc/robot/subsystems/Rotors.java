@@ -6,6 +6,7 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix6.hardware.TalonFX;
 
+import edu.wpi.first.wpilibj.motorcontrol.Talon;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.RobotMap.mapRotors;
 import frc.robot.constants.ConstRotors;
@@ -13,14 +14,14 @@ import frc.robot.constants.ConstRotors;
 public class Rotors extends SubsystemBase {
   /** Creates a new Rotors. */
   final TalonFX intakeMotor = new TalonFX(mapRotors.INTAKE_CAN);
-  final TalonFX hopperRightMotor = new TalonFX(mapRotors.HOPPER_RIGHT_CAN);
-  final TalonFX hopperLeftMotor = new TalonFX(mapRotors.HOPPER_LEFT_CAN);
+  final TalonFX rightHopperMotor = new TalonFX(mapRotors.HOPPER_RIGHT_CAN);
+  final TalonFX leftHopperMotor = new TalonFX(mapRotors.HOPPER_LEFT_CAN);
   final TalonFX flywheelMotor = new TalonFX(mapRotors.FLYWHEEL_CAN);
 
   public Rotors() {
     intakeMotor.getConfigurator().apply(ConstRotors.INTAKE_CONFIGURATION);
-    hopperRightMotor.getConfigurator().apply(ConstRotors.HOPPER_RIGHT_CONFIGURATION);
-    hopperLeftMotor.getConfigurator().apply(ConstRotors.HOPPER_LEFT_CONFIGURATION);
+    rightHopperMotor.getConfigurator().apply(ConstRotors.HOPPER_RIGHT_CONFIGURATION);
+    leftHopperMotor.getConfigurator().apply(ConstRotors.HOPPER_LEFT_CONFIGURATION);
     flywheelMotor.getConfigurator().apply(ConstRotors.FLYWHEEL_CONFIGURATION);
   }
 
@@ -28,12 +29,12 @@ public class Rotors extends SubsystemBase {
     intakeMotor.set(speed);
   }
 
-  public void setFunnelBeltMotorSpeed(double speed) {
-    hopperRightMotor.set(speed);
+  public void hopperRightMotorSpeed(double speed) {
+    rightHopperMotor.set(speed);
   }
 
-  public void HOPPER_LEFT(double speed){
-    HOPPER_LEFT(speed);
+  public void hopperLeftMotorSpeed(double speed){
+    leftHopperMotor.set(speed);
 
   }
   public void setFlywheelMotorSpeed(double speed) {
