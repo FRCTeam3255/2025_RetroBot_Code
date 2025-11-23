@@ -45,7 +45,7 @@ public class RobotMap {
     public static final int INTAKE_CAN = 10;
     public static final int FUNNEL_BELT_CAN = 11;
     public static final int FLYWHEEL_CAN = 12;
-    public static final int TRANSFER_CAN = 0;
+    public static final int TRANSFER_CAN = 13;
   }
 
 }
