@@ -9,28 +9,27 @@ import frc.robot.RobotContainer;
 import frc.robot.constants.ConstMotion;
 
 /* You should consider using the more terse Command factories API instead https://docs.wpilib.org/en/stable/docs/software/commandbased/organizing-command-based.html#defining-commands */
-public class PrepClimb extends Command {
-  /** Creates a new PrepClimb. */
-  public PrepClimb() {
+public class PrepPanel extends Command {
+  /** Creates a new PrepPanel. */
+  public PrepPanel() {
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    RobotContainer.motionInstance.setClimberSpeed(ConstMotion.EXTEND_CLIMBER_MOTOR_SPEED);
-
+  RobotContainer.motionInstance.setClimberSpeed(ConstMotion.EXTEND_CLIMBER_MOTOR_SPEED);
   }
+
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {
-  }
+  public void execute() {}
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    RobotContainer.motionInstance.setClimberSpeed(0);
+    RobotContainer.motionInstance.setClimberSpeed(0 );
 
   }
 

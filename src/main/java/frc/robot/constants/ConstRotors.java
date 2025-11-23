@@ -16,7 +16,9 @@ public class ConstRotors {
   public static final TalonFXConfiguration FLYWHEEL_CONFIGURATION = new TalonFXConfiguration();
   public static final double FUNNEL_BELT_SPEED = 0.5;
   public static final double INTAKE_MOTOR_SPEED = 0.5;
-  public static final double FLYWHEEL_SPEED = 0.67;
+  public static final double FLYWHEEL_SPEED = 1;
+  public static final TalonFXConfiguration TRANSFER_CONFIGURATION = new TalonFXConfiguration();
+  public static final double TRANSFER_SPEED = 0.5;
   {
 
     // TODO: replace configurations with real values

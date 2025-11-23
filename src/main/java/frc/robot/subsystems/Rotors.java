@@ -16,13 +16,17 @@ public class Rotors extends SubsystemBase {
   final TalonFX intakeMotor = new TalonFX(mapRotors.INTAKE_CAN);
   final TalonFX rightHopperMotor = new TalonFX(mapRotors.HOPPER_RIGHT_CAN);
   final TalonFX leftHopperMotor = new TalonFX(mapRotors.HOPPER_LEFT_CAN);
-  final TalonFX flywheelMotor = new TalonFX(mapRotors.FLYWHEEL_CAN);
+  final TalonFX rightflywheelMotor = new TalonFX(mapRotors.RIGHT_FLYWHEEL_CAN);
+  final TalonFX leftflywheelMotor = new TalonFX(mapRotors.LEFT_FLYWHEEL_CAN);
+  final TalonFX transferMotor = new TalonFX(mapRotors.TRANSFER_CAN);
 
   public Rotors() {
     intakeMotor.getConfigurator().apply(ConstRotors.INTAKE_CONFIGURATION);
     rightHopperMotor.getConfigurator().apply(ConstRotors.HOPPER_RIGHT_CONFIGURATION);
     leftHopperMotor.getConfigurator().apply(ConstRotors.HOPPER_LEFT_CONFIGURATION);
-    flywheelMotor.getConfigurator().apply(ConstRotors.FLYWHEEL_CONFIGURATION);
+    rightflywheelMotor.getConfigurator().apply(ConstRotors.FLYWHEEL_CONFIGURATION);
+    leftflywheelMotor.getConfigurator().apply(ConstRotors.FLYWHEEL_CONFIGURATION);
+    transferMotor.getConfigurator().apply(ConstRotors.TRANSFER_CONFIGURATION);
   }
 
   public void setIntakeMotorSpeed(double speed) {
@@ -38,9 +42,13 @@ public class Rotors extends SubsystemBase {
 
   }
   public void setFlywheelMotorSpeed(double speed) {
-    flywheelMotor.set(speed);
-
+    rightflywheelMotor.set(-speed);
+    leftflywheelMotor.set(speed);
   }
+
+public void setTransferMotorSpeed(double speed){
+transferMotor.set(speed);
+}
 
   @Override
   public void periodic() {
