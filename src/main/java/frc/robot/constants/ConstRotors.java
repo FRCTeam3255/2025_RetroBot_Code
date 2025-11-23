@@ -14,7 +14,8 @@ public class ConstRotors {
   public static final TalonFXConfiguration HOPPER_RIGHT_CONFIGURATION = new TalonFXConfiguration();
   public static final TalonFXConfiguration HOPPER_LEFT_CONFIGURATION = new TalonFXConfiguration();
   public static final TalonFXConfiguration FLYWHEEL_CONFIGURATION = new TalonFXConfiguration();
-  public static final double FUNNEL_BELT_SPEED = 0.5;
+  public static final double HOPPER_RIGHT_MOTOR_SPEED = 0.5;
+public static final double HOPPER_LEFT_MOTOR_SPEED = 0.5;
   public static final double INTAKE_MOTOR_SPEED = 0.5;
   public static final double FLYWHEEL_SPEED = 1;
   public static final TalonFXConfiguration TRANSFER_CONFIGURATION = new TalonFXConfiguration();
