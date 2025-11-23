@@ -31,6 +31,7 @@ public class Shooting extends Command {
   @Override
   public void end(boolean interrupted) {
     RobotContainer.rotorsInstance.setFunnelBeltMotorSpeed(0);
+
   }
 
   // Returns true when the command should end.
