@@ -903,8 +903,8 @@
 			"id": "shape:krHzgOT85HiAM2f___ioT",
 			"type": "geo",
 			"props": {
-				"w": 61.69834899902344,
-				"h": 61.69834899902344,
+				"w": 61.6953125,
+				"h": 61.6953125,
 				"geo": "arrow-left",
 				"dash": "dashed",
 				"growY": 0,
