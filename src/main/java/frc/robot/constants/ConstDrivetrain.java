@@ -52,11 +52,10 @@ public class ConstDrivetrain {
   // In Rotations: Obtain by aligning all of the wheels in the correct direction
   // and copy-pasting the Raw Absolute Encoder value
 
-  // TODO: Swoffsets
-  public static final double FRONT_LEFT_ABS_ENCODER_OFFSET = 0.417236;
-  public static final double FRONT_RIGHT_ABS_ENCODER_OFFSET = -0.254395;
-  public static final double BACK_LEFT_ABS_ENCODER_OFFSET = 0.258789;
-  public static final double BACK_RIGHT_ABS_ENCODER_OFFSET = -0.290039;
+  public static final double FRONT_LEFT_ABS_ENCODER_OFFSET = -0.313232421875; // m0
+  public static final double FRONT_RIGHT_ABS_ENCODER_OFFSET = 0.49755859375;// m1
+  public static final double BACK_LEFT_ABS_ENCODER_OFFSET = -0.0537109375;// m2
+  public static final double BACK_RIGHT_ABS_ENCODER_OFFSET = 0.316650390625;// m3
 
   public static final double SLOW_MODE_MULTIPLIER = 0.5;
 
