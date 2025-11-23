@@ -19,7 +19,8 @@ public class Shooting extends Command {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    RobotContainer.rotorsInstance.setFunnelBeltMotorSpeed(ConstRotors.FUNNEL_BELT_SPEED);
+    RobotContainer.rotorsInstance.setHopperRightMotorSpeed(ConstRotors.HOPPER_RIGHT_MOTOR_SPEED);
+    RobotContainer.rotorsInstance.setHopperLeftMotorSpeed(ConstRotors.HOPPER_LEFT_MOTOR_SPEED);
     RobotContainer.rotorsInstance.setTransferMotorSpeed(ConstRotors.TRANSFER_SPEED);
   }
 
@@ -31,7 +32,8 @@ public class Shooting extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    RobotContainer.rotorsInstance.setFunnelBeltMotorSpeed(0);
+    RobotContainer.rotorsInstance.setHopperRightMotorSpeed(0);
+    RobotContainer.rotorsInstance.setHopperLeftMotorSpeed(0);
     RobotContainer.rotorsInstance.setTransferMotorSpeed(0);
   }
 
