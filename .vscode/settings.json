@@ -66,5 +66,5 @@
   ],
   "git.pullBeforeCheckout": true,
   "java.saveActions.organizeImports": true,
-  "workbench.iconTheme": "vs-seti",
+  "workbench.iconTheme": "material-icon-theme",
 }
