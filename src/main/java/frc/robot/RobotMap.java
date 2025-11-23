@@ -43,7 +43,7 @@ public class RobotMap {
     public static final int INTAKE_CAN = 10;
     public static final int HOPPER_RIGHT_CAN = 14;
     public static final int FLYWHEEL_CAN = 12;
-    public static final int HOPPER_LEFT_CAN = 0;
+    public static final int HOPPER_LEFT_CAN = 15;
   }
 
 }
