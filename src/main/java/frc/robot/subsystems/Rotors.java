@@ -16,12 +16,14 @@ public class Rotors extends SubsystemBase {
   final TalonFX funnelBeltMotor = new TalonFX(mapRotors.FUNNEL_BELT_CAN);
   final TalonFX rightflywheelMotor = new TalonFX(mapRotors.RIGHT_FLYWHEEL_CAN);
   final TalonFX leftflywheelMotor = new TalonFX(mapRotors.LEFT_FLYWHEEL_CAN);
+  final TalonFX transferMotor = new TalonFX(mapRotors.TRANSFER_CAN);
 
   public Rotors() {
     intakeMotor.getConfigurator().apply(ConstRotors.INTAKE_CONFIGURATION);
     funnelBeltMotor.getConfigurator().apply(ConstRotors.FUNNEL_BELT_CONFIGURATION);
     rightflywheelMotor.getConfigurator().apply(ConstRotors.FLYWHEEL_CONFIGURATION);
     leftflywheelMotor.getConfigurator().apply(ConstRotors.FLYWHEEL_CONFIGURATION);
+    transferMotor.getConfigurator().apply(ConstRotors.TRANSFER_CONFIGURATION);
   }
 
   public void setIntakeMotorSpeed(double speed) {
@@ -36,6 +38,10 @@ public class Rotors extends SubsystemBase {
     rightflywheelMotor.set(-speed);
     leftflywheelMotor.set(speed);
   }
+
+public void setTransferMotorSpeed(double speed){
+transferMotor.set(speed);
+}
 
   @Override
   public void periodic() {

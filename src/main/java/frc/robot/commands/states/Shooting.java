@@ -20,6 +20,7 @@ public class Shooting extends Command {
   @Override
   public void initialize() {
     RobotContainer.rotorsInstance.setFunnelBeltMotorSpeed(ConstRotors.FUNNEL_BELT_SPEED);
+    RobotContainer.rotorsInstance.setTransferMotorSpeed(ConstRotors.TRANSFER_SPEED);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -31,7 +32,7 @@ public class Shooting extends Command {
   @Override
   public void end(boolean interrupted) {
     RobotContainer.rotorsInstance.setFunnelBeltMotorSpeed(0);
-
+    RobotContainer.rotorsInstance.setTransferMotorSpeed(0);
   }
 
   // Returns true when the command should end.
