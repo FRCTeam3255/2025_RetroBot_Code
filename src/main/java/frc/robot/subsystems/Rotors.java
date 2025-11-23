@@ -14,8 +14,8 @@ public class Rotors extends SubsystemBase {
   /** Creates a new Rotors. */
   final TalonFX intakeMotor = new TalonFX(mapRotors.INTAKE_CAN);
   final TalonFX funnelBeltMotor = new TalonFX(mapRotors.FUNNEL_BELT_CAN);
-  final TalonFX rightflywheelMotor = new TalonFX(mapRotors.RIGHTFLYWHEEL_CAN);
-  final TalonFX leftflywheelMotor = new TalonFX(mapRotors.LEFTFLYWHEEL_CAN);
+  final TalonFX rightflywheelMotor = new TalonFX(mapRotors.RIGHT_FLYWHEEL_CAN);
+  final TalonFX leftflywheelMotor = new TalonFX(mapRotors.LEFT_FLYWHEEL_CAN);
 
   public Rotors() {
     intakeMotor.getConfigurator().apply(ConstRotors.INTAKE_CONFIGURATION);
