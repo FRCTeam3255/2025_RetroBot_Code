@@ -32,7 +32,8 @@ public class Shooting extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    RobotContainer.rotorsInstance.setFunnelBeltMotorSpeed(0);
+    RobotContainer.rotorsInstance.setHopperRightMotorSpeed(0);
+    RobotContainer.rotorsInstance.setHopperLeftMotorSpeed(0);
     RobotContainer.rotorsInstance.setTransferMotorSpeed(0);
   }
 
