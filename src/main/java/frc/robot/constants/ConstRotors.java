@@ -11,7 +11,8 @@ import com.ctre.phoenix6.signals.NeutralModeValue;
 /** Add your docs here. */
 public class ConstRotors {
   public static final TalonFXConfiguration INTAKE_CONFIGURATION = new TalonFXConfiguration();
-  public static final TalonFXConfiguration FUNNEL_BELT_CONFIGURATION = new TalonFXConfiguration();
+  public static final TalonFXConfiguration HOPPER_RIGHT_CONFIGURATION = new TalonFXConfiguration();
+  public static final TalonFXConfiguration HOPPER_LEFT_CONFIGURATION = new TalonFXConfiguration();
   public static final TalonFXConfiguration FLYWHEEL_CONFIGURATION = new TalonFXConfiguration();
   public static final double FUNNEL_BELT_SPEED = 0.5;
   public static final double INTAKE_MOTOR_SPEED = 0.5;
@@ -22,8 +23,8 @@ public class ConstRotors {
     INTAKE_CONFIGURATION.MotorOutput.NeutralMode = NeutralModeValue.Brake;
     INTAKE_CONFIGURATION.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
 
-    FUNNEL_BELT_CONFIGURATION.MotorOutput.NeutralMode = NeutralModeValue.Brake;
-    FUNNEL_BELT_CONFIGURATION.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
+    HOPPER_RIGHT_CONFIGURATION.MotorOutput.NeutralMode = NeutralModeValue.Brake;
+    HOPPER_RIGHT_CONFIGURATION.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
 
     FLYWHEEL_CONFIGURATION.MotorOutput.NeutralMode = NeutralModeValue.Coast;
     FLYWHEEL_CONFIGURATION.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;

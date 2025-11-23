@@ -19,6 +19,7 @@ public class Intaking extends Command {
   @Override
   public void initialize() {
     RobotContainer.rotorsInstance.setIntakeMotorSpeed(ConstRotors.INTAKE_MOTOR_SPEED);
+
   }
 
   // Called every time the scheduler runs while the command is scheduled.
