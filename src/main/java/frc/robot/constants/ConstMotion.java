@@ -32,7 +32,7 @@ public class ConstMotion {
     HOOD_CONFIGURATION.Slot0.kG = 0;
     HOOD_CONFIGURATION.Slot0.kP = 0;
     HOOD_CONFIGURATION.Slot0.GravityType = GravityTypeValue.Arm_Cosine;
-    HOOD_CONFIGURATION.Feedback.SensorToMechanismRatio = ((0 / 0) * (0 / 0)); // TODO: CHANGE GEAR VALUES
+    HOOD_CONFIGURATION.Feedback.SensorToMechanismRatio = 1; // TODO: CHANGE GEAR VALUES
 
   }
 }
