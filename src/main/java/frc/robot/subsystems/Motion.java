@@ -16,7 +16,7 @@ import frc.robot.constants.ConstMotion;
 public class Motion extends SubsystemBase {
   /** Creates a new Motion. */
   final TalonFX hood = new TalonFX(RobotMap.mapMotion.HOOD_CAN);
-  final TalonFX controlPanelWheelMotor = new TalonFX(RobotMap.mapMotion.CONTROL_PANEL_WHEEL_CAN);
+  final TalonFX intakePivot = new TalonFX(RobotMap.mapMotion.INTAKE_PIVOT);
 
   public Motion() {
     // Apply configuration to Climber motor
@@ -30,8 +30,8 @@ public class Motion extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 
-  public void setControlPanelSpeed(double speed){
-    controlPanelWheelMotor.set(speed);
+  public void intakePivot(double speed) {
+    intakePivot.set(speed);
   }
 
   

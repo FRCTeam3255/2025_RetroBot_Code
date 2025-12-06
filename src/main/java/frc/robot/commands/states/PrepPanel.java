@@ -18,19 +18,18 @@ public class PrepPanel extends Command {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-  RobotContainer.rotorsInstance.setClimberSpeed(ConstRotors.EXTEND_CLIMBER_MOTOR_SPEED);
+    RobotContainer.motionInstance.intakePivot(ConstMotion.INTAKE_PIVOT);
   }
-
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+  }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    RobotContainer.rotorsInstance.setClimberSpeed(0 );
-
+    RobotContainer.motionInstance.intakePivot(0);
   }
 
   // Returns true when the command should end.
