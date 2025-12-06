@@ -122,7 +122,7 @@ public class ConstDrivetrain {
   public static final double MIN_STEER_PERCENT = 0.01;
 
   // Rotational speed (degrees per second) while manually driving
-  public static final AngularVelocity TURN_SPEED = Units.DegreesPerSecond.of(360);
+  public static final AngularVelocity TURN_SPEED = Units.DegreesPerSecond.of(-360);
 
   // -- Motor Configurations --
   static {
@@ -145,7 +145,7 @@ public class ConstDrivetrain {
     STEER_CONFIG.Slot0.kI = 0.0;
     STEER_CONFIG.Slot0.kD = 0.14414076246334312;
 
-    STEER_CONFIG.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
+    STEER_CONFIG.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;
     STEER_CONFIG.MotorOutput.NeutralMode = NeutralModeValue.Coast;
     STEER_CONFIG.Feedback.SensorToMechanismRatio = 12.8;
     STEER_CONFIG.ClosedLoopGeneral.ContinuousWrap = true;
