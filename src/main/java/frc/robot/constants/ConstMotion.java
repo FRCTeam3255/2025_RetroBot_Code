@@ -11,8 +11,10 @@ import com.ctre.phoenix6.signals.NeutralModeValue;
 /** Add your docs here. */
 public class ConstMotion {
 
- public static final double EXTEND_CONTROLPANEL_MOTOR_SPEED = 0.5;
- 
+  public static final double INTAKE_PIVOT = 0.5;
+
+  public static final double EXTEND_CONTROLPANEL_MOTOR_SPEED = 0.5;
+
   public static final double EXTEND_CLIMBER_MOTOR_SPEED = 0.5;
 
   public static final double STOP_CLIMBER_MOTOR = 0;

@@ -37,6 +37,7 @@ public class RobotMap {
     public static final int CLIMBER_CAN = 20;
     public static final int CONTROL_PANEL_WHEEL_CAN = 21;
     public static final int HOOD_CAN = 22;
+    public static final int INTAKE_PIVOT = 23;
 
   }
 
