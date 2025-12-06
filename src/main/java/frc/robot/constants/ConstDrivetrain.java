@@ -53,10 +53,10 @@ public class ConstDrivetrain {
   // and copy-pasting the Raw Absolute Encoder value
 
   // TODO: Swoffsets
-  public static final double FRONT_LEFT_ABS_ENCODER_OFFSET = 0.417236;
-  public static final double FRONT_RIGHT_ABS_ENCODER_OFFSET = -0.254395;
-  public static final double BACK_LEFT_ABS_ENCODER_OFFSET = 0.258789;
-  public static final double BACK_RIGHT_ABS_ENCODER_OFFSET = -0.290039;
+  public static final double FRONT_LEFT_ABS_ENCODER_OFFSET = -0.319092;
+  public static final double FRONT_RIGHT_ABS_ENCODER_OFFSET = 0.497803;
+  public static final double BACK_LEFT_ABS_ENCODER_OFFSET = -0.053711;
+  public static final double BACK_RIGHT_ABS_ENCODER_OFFSET = 0.318359;
 
   public static final double SLOW_MODE_MULTIPLIER = 0.5;
 
@@ -138,7 +138,7 @@ public class ConstDrivetrain {
     DRIVE_CONFIG.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;
     DRIVE_CONFIG.MotorOutput.NeutralMode = NeutralModeValue.Brake;
     DRIVE_CONFIG.Feedback.SensorToMechanismRatio = SWERVE_CONSTANTS.driveGearRatio;
-    DRIVE_CONFIG.CurrentLimits.SupplyCurrentLimitEnable = true;
+    DRIVE_CONFIG.CurrentLimits.SupplyCurrentLimitEnable = false;
     DRIVE_CONFIG.CurrentLimits.SupplyCurrentLimit = DRIVE_CURRENT_LIMIT.in(Units.Amps);
 
     STEER_CONFIG.Slot0.kP = 100;

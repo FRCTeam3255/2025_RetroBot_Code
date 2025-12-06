@@ -1,0 +1,52 @@
+{
+  "NetworkTables": {
+    "Persistent Values": {
+      "open": false
+    },
+    "transitory": {
+      "Robot": {
+        "m_robotContainer": {
+          "open": true,
+          "robotPose": {
+            "open": true
+          },
+          "subDriverStateMachine": {
+            "open": true
+          },
+          "subDrivetrain": {
+            "getRotationMeasure": {
+              "open": true
+            },
+            "open": true
+          },
+          "subMotion": {
+            "backLeftPivotMotorFollower": {
+              "open": true
+            },
+            "backRightPivotMotorFollower": {
+              "open": true
+            },
+            "elevatorLiftLastDesiredPosition": {
+              "open": true
+            },
+            "elevatorPivotLastDesiredAngle": {
+              "open": true
+            },
+            "open": true,
+            "wristPivotMotor": {
+              "open": true
+            }
+          }
+        },
+        "open": true
+      }
+    },
+    "types": {
+      "/FMSInfo": "FMSInfo",
+      "/SmartDashboard/AutoChooser": "String Chooser",
+      "/SmartDashboard/Choreo Alerts": "Alerts",
+      "/SmartDashboard/Field": "Field2d",
+      "/SmartDashboard/PathPlanner": "Alerts"
+    }
+  }
+}
