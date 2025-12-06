@@ -6,37 +6,31 @@ package frc.robot.commands.states;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.RobotContainer;
-import frc.robot.constants.ConstRotors;
+import frc.robot.constants.ConstMotion;
 
 /* You should consider using the more terse Command factories API instead https://docs.wpilib.org/en/stable/docs/software/commandbased/organizing-command-based.html#defining-commands */
-public class Shooting extends Command {
-
-  /** Creates a new Shooting. */
-  public Shooting() {
+public class PrepPanel extends Command {
+  /** Creates a new PrepPanel. */
+  public PrepPanel() {
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    RobotContainer.rotorsInstance.setHopperRightMotorSpeed(ConstRotors.HOPPER_RIGHT_MOTOR_SPEED);
-    RobotContainer.rotorsInstance.setHopperLeftMotorSpeed(ConstRotors.HOPPER_LEFT_MOTOR_SPEED);
-    RobotContainer.rotorsInstance.setTransferMotorSpeed(ConstRotors.TRANSFER_SPEED);
-    RobotContainer.rotorsInstance.setIntakeMotorSpeed(ConstRotors.INTAKE_MOTOR_SPEED);
+  RobotContainer.motionInstance.setClimberSpeed(ConstMotion.EXTEND_CLIMBER_MOTOR_SPEED);
   }
+
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {
-  }
+  public void execute() {}
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    RobotContainer.rotorsInstance.setHopperRightMotorSpeed(0);
-    RobotContainer.rotorsInstance.setHopperLeftMotorSpeed(0);
-    RobotContainer.rotorsInstance.setTransferMotorSpeed(0);
-    RobotContainer.rotorsInstance.setIntakeMotorSpeed(0);
+    RobotContainer.motionInstance.setClimberSpeed(0 );
+
   }
 
   // Returns true when the command should end.
