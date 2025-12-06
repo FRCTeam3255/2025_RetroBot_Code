@@ -11,8 +11,8 @@ import com.ctre.phoenix6.signals.NeutralModeValue;
 /** Add your docs here. */
 public class ConstMotion {
 
- public static final double EXTEND_CONTROLPANEL_MOTOR_SPEED = 0.5;
- 
+  public static final double EXTEND_CONTROLPANEL_MOTOR_SPEED = 0.5;
+
   public static final double EXTEND_CLIMBER_MOTOR_SPEED = 0.5;
 
   public static final double STOP_CLIMBER_MOTOR = 0;
@@ -28,7 +28,7 @@ public class ConstMotion {
   public static final TalonFXConfiguration CLIMBER_CONFIGURATION = new TalonFXConfiguration();
 
   public static final TalonFXConfiguration HOOD_CONFIGURATION = new TalonFXConfiguration();
-  {
+  static {
     CLIMBER_CONFIGURATION.MotorOutput.NeutralMode = NeutralModeValue.Brake;
     CLIMBER_CONFIGURATION.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
 

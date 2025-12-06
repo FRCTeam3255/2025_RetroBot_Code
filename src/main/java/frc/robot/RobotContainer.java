@@ -90,7 +90,7 @@ public class RobotContainer {
 
   private void configDriverBindings() {
     conDriver.btn_B.onTrue(Commands.runOnce(() -> subDrivetrain.resetModulesToAbsolute()));
-    conDriver.btn_Back
+    conDriver.btn_North
         .onTrue(Commands.runOnce(() -> subDrivetrain.resetPoseToPose(new Pose2d(0, 0, new Rotation2d()))));
 
     // Defaults to Field-Relative, is Robot-Relative while held
@@ -144,7 +144,7 @@ public class RobotContainer {
     conOperator.btn_West.whileTrue(new TripleRotatingPanel());
     conOperator.btn_East.whileTrue(new ColorRotatingPanel());
     conOperator.btn_North.whileTrue(new PrepPanel());
-    
+
   }
 
   public RobotState getRobotState() {
