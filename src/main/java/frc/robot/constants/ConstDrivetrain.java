@@ -52,10 +52,11 @@ public class ConstDrivetrain {
   // In Rotations: Obtain by aligning all of the wheels in the correct direction
   // and copy-pasting the Raw Absolute Encoder value
 
-  public static final double FRONT_LEFT_ABS_ENCODER_OFFSET = -0.313232421875; // m0
-  public static final double FRONT_RIGHT_ABS_ENCODER_OFFSET = 0.49755859375;// m1
-  public static final double BACK_LEFT_ABS_ENCODER_OFFSET = -0.0537109375;// m2
-  public static final double BACK_RIGHT_ABS_ENCODER_OFFSET = 0.316650390625;// m3
+  // TODO: Swoffsets
+  public static final double FRONT_LEFT_ABS_ENCODER_OFFSET = 0.417236;
+  public static final double FRONT_RIGHT_ABS_ENCODER_OFFSET = -0.254395;
+  public static final double BACK_LEFT_ABS_ENCODER_OFFSET = 0.258789;
+  public static final double BACK_RIGHT_ABS_ENCODER_OFFSET = -0.290039;
 
   public static final double SLOW_MODE_MULTIPLIER = 0.5;
 
@@ -76,7 +77,7 @@ public class ConstDrivetrain {
    * Competition Robot.
    * </p>
    */
-  public static final LinearVelocity REAL_DRIVE_SPEED = Units.FeetPerSecond.of(50.0);
+  public static final LinearVelocity REAL_DRIVE_SPEED = Units.FeetPerSecond.of(15.1);
   // Physically measured from center to center of the wheels
   // Distance between Left & Right Wheels for 25 by 25 frame
   public static final double TRACK_WIDTH_25 = Units.Meters.convertFrom(19.75, Units.Inches);
@@ -127,7 +128,7 @@ public class ConstDrivetrain {
   static {
     // This PID is implemented on each module, not the Drivetrain subsystem.
     // TODO: PID
-    DRIVE_CONFIG.Slot0.kP = 0.3;
+    DRIVE_CONFIG.Slot0.kP = 0.18;
     DRIVE_CONFIG.Slot0.kI = 0.0;
     DRIVE_CONFIG.Slot0.kD = 0.0;
     DRIVE_CONFIG.Slot0.kS = 0.0;
