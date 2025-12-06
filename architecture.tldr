@@ -137,9 +137,9 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": 946.9102409072259,
-			"y": 264.853343878141,
-			"lastActivityTimestamp": 1764995788571,
+			"x": -192.95511024178268,
+			"y": 802.8235141715618,
+			"lastActivityTimestamp": 1764995816496,
 			"meta": {}
 		},
 		{
@@ -940,9 +940,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1145.8513455651153,
-			"y": -43.89652700943694,
-			"z": 0.4243794447207271,
+			"x": 1255.4756880768873,
+			"y": -99.67023675865329,
+			"z": 0.45669456724967833,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -1587,12 +1587,12 @@
 			"typeName": "binding"
 		},
 		{
-			"editingShapeId": null,
+			"editingShapeId": "shape:Mzp2ubNgsB6PO-S4OCyS6",
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:lit_o-BImEYrpnpXfLgPH"
+				"shape:Mzp2ubNgsB6PO-S4OCyS6"
 			],
-			"hoveredShapeId": null,
+			"hoveredShapeId": "shape:Mzp2ubNgsB6PO-S4OCyS6",
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -2865,7 +2865,7 @@
 							"content": [
 								{
 									"type": "text",
-									"text": "IntakingGround"
+									"text": "Intaking"
 								}
 							]
 						}
@@ -4148,9 +4148,9 @@
 			"isFocused": true,
 			"devicePixelRatio": 2.4000000953674316,
 			"isCoarsePointer": false,
-			"isHoveringCanvas": false,
+			"isHoveringCanvas": true,
 			"openMenus": [],
-			"isChangingStyle": true,
+			"isChangingStyle": false,
 			"isReadonly": false,
 			"meta": {},
 			"duplicateProps": null,
