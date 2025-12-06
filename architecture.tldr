@@ -137,9 +137,9 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": 749.287082046752,
-			"y": 1213.4657235342538,
-			"lastActivityTimestamp": 1764995641003,
+			"x": 655.8358862143601,
+			"y": 80.93555618559662,
+			"lastActivityTimestamp": 1764994261512,
 			"meta": {}
 		},
 		{
@@ -631,10 +631,10 @@
 				"isPrecise": true,
 				"isExact": false,
 				"normalizedAnchor": {
-					"x": 1,
-					"y": 0.5000000000000009
+					"x": 0.03992358408939187,
+					"y": 0.4545160334273507
 				},
-				"snap": "edge-point",
+				"snap": "none",
 				"terminal": "start"
 			},
 			"typeName": "binding"
@@ -649,7 +649,7 @@
 			"id": "shape:uR9EZnu51yw7Afq-Bqykc",
 			"type": "arrow",
 			"props": {
-				"kind": "elbow",
+				"kind": "arc",
 				"elbowMidPoint": 0.5,
 				"dash": "draw",
 				"size": "m",
@@ -680,7 +680,7 @@
 				"scale": 1
 			},
 			"parentId": "page:page",
-			"index": "b07G2SH5gV",
+			"index": "b07qvEtUS",
 			"typeName": "shape"
 		},
 		{
@@ -802,8 +802,8 @@
 			"typeName": "binding"
 		},
 		{
-			"x": 36.212931720602,
-			"y": 597.8538669914087,
+			"x": 36.19742727831169,
+			"y": 582.4608118785827,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -940,9 +940,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1230.2883567239055,
-			"y": -2.6598471411913067,
-			"z": 0.4243794447207271,
+			"x": 954.7099904684791,
+			"y": 69.34682367032363,
+			"z": 0.4229595378860729,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -1125,7 +1125,7 @@
 			"id": "shape:QRlj7pssAVRSsChO5bACt",
 			"type": "arrow",
 			"props": {
-				"kind": "elbow",
+				"kind": "arc",
 				"elbowMidPoint": 0.5,
 				"dash": "draw",
 				"size": "m",
@@ -1215,7 +1215,7 @@
 			"id": "shape:GnaolqerFNhjB5wLF0N8m",
 			"type": "arrow",
 			"props": {
-				"kind": "elbow",
+				"kind": "arc",
 				"elbowMidPoint": 0.5,
 				"dash": "draw",
 				"size": "m",
@@ -1307,13 +1307,13 @@
 			"fromId": "shape:QRlj7pssAVRSsChO5bACt",
 			"toId": "shape:ZBSYWa459Q4EVN62qq7f-",
 			"props": {
-				"isPrecise": true,
+				"isPrecise": false,
 				"isExact": false,
 				"normalizedAnchor": {
-					"x": 0.9335692808616827,
+					"x": 0.5,
 					"y": 0.5
 				},
-				"snap": "edge-point",
+				"snap": "center",
 				"terminal": "start"
 			},
 			"typeName": "binding"
@@ -1578,10 +1578,10 @@
 				"isPrecise": true,
 				"isExact": false,
 				"normalizedAnchor": {
-					"x": 0,
-					"y": 0.4999999999999999
+					"x": 0.6712475172007184,
+					"y": 0.5676429271675068
 				},
-				"snap": "edge-point",
+				"snap": "none",
 				"terminal": "end"
 			},
 			"typeName": "binding"
@@ -1589,8 +1589,11 @@
 		{
 			"editingShapeId": null,
 			"croppingShapeId": null,
-			"selectedShapeIds": [],
-			"hoveredShapeId": "shape:EAzfRBtn4IWSHGZkl6OQQ",
+			"selectedShapeIds": [
+				"shape:9B7nrDd00MaheB8kjgtmH",
+				"shape:MaOrc0dEi9bRcYrD6e9Bd"
+			],
+			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -2017,10 +2020,10 @@
 				"isPrecise": true,
 				"isExact": false,
 				"normalizedAnchor": {
-					"x": 1,
-					"y": 0.49999999999999917
+					"x": 0.2848856698502476,
+					"y": 0.4542683635938998
 				},
-				"snap": "edge-point",
+				"snap": "none",
 				"terminal": "start"
 			},
 			"typeName": "binding"
@@ -2053,10 +2056,10 @@
 				"isPrecise": true,
 				"isExact": false,
 				"normalizedAnchor": {
-					"x": 0,
-					"y": 0.9735965947523018
+					"x": 0.1336335950901256,
+					"y": 0.7192759185507229
 				},
-				"snap": "edge",
+				"snap": "none",
 				"terminal": "end"
 			},
 			"typeName": "binding"
@@ -2071,8 +2074,8 @@
 			"id": "shape:L3lAKRQ2QSXl6JJMHwV2C",
 			"type": "arrow",
 			"props": {
-				"kind": "elbow",
-				"elbowMidPoint": 0.7742340168323171,
+				"kind": "arc",
+				"elbowMidPoint": 0.5,
 				"dash": "draw",
 				"size": "m",
 				"fill": "solid",
@@ -2102,7 +2105,7 @@
 				"scale": 1
 			},
 			"parentId": "page:page",
-			"index": "b082y8uOh4",
+			"index": "b087KnApz",
 			"typeName": "shape"
 		},
 		{
@@ -2253,8 +2256,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -812.5273121099946,
-			"y": 1229.84300831588,
+			"x": -780.0928588211867,
+			"y": 1222.6662597090374,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -2265,7 +2268,7 @@
 				"w": 176.4648412943759,
 				"h": 61,
 				"geo": "rhombus",
-				"dash": "solid",
+				"dash": "draw",
 				"growY": 0.6983489990234375,
 				"url": "",
 				"scale": 1,
@@ -2418,7 +2421,7 @@
 			"id": "shape:ec2OZL964e65lbeImdjM7",
 			"type": "arrow",
 			"props": {
-				"kind": "elbow",
+				"kind": "arc",
 				"elbowMidPoint": 0.5,
 				"dash": "draw",
 				"size": "m",
@@ -2449,7 +2452,7 @@
 				"scale": 1
 			},
 			"parentId": "page:page",
-			"index": "b082qZzMToV",
+			"index": "b08ZQPHNl",
 			"typeName": "shape"
 		},
 		{
@@ -2722,10 +2725,10 @@
 				"isPrecise": true,
 				"isExact": false,
 				"normalizedAnchor": {
-					"x": 0,
-					"y": 0.09713209226347506
+					"x": 0.79338869433201,
+					"y": 0.329660531628188
 				},
-				"snap": "edge",
+				"snap": "none",
 				"terminal": "end"
 			},
 			"typeName": "binding"
@@ -2863,7 +2866,7 @@
 							"content": [
 								{
 									"type": "text",
-									"text": "Intaking"
+									"text": "IntakingGround"
 								}
 							]
 						}
@@ -3115,8 +3118,8 @@
 			"id": "shape:qzA-tHxmq_pf_u8P8-gKW",
 			"type": "arrow",
 			"props": {
-				"kind": "elbow",
-				"elbowMidPoint": 1,
+				"kind": "arc",
+				"elbowMidPoint": 0.5,
 				"dash": "draw",
 				"size": "m",
 				"fill": "solid",
@@ -3177,7 +3180,7 @@
 			"id": "shape:sXvBv2hFADPW2Yw5q0eiK",
 			"type": "arrow",
 			"props": {
-				"kind": "elbow",
+				"kind": "arc",
 				"elbowMidPoint": 0.5,
 				"dash": "draw",
 				"size": "m",
@@ -3208,7 +3211,7 @@
 				"scale": 1
 			},
 			"parentId": "page:page",
-			"index": "b06iQX6JIZ",
+			"index": "b06vTnDwh",
 			"typeName": "shape"
 		},
 		{
@@ -3265,10 +3268,10 @@
 				"isPrecise": true,
 				"isExact": false,
 				"normalizedAnchor": {
-					"x": 0,
-					"y": 0.4999999999999999
+					"x": 0.008906836795396068,
+					"y": 0.5493448455032736
 				},
-				"snap": "edge-point",
+				"snap": "none",
 				"terminal": "end"
 			},
 			"typeName": "binding"
@@ -3283,17 +3286,17 @@
 				"isPrecise": true,
 				"isExact": false,
 				"normalizedAnchor": {
-					"x": 1,
-					"y": 0.49999999999999917
+					"x": 0.3789269922718971,
+					"y": 0.5758012669017357
 				},
-				"snap": "edge-point",
+				"snap": "none",
 				"terminal": "start"
 			},
 			"typeName": "binding"
 		},
 		{
-			"x": -797.8826701127848,
-			"y": 1115.84904098211,
+			"x": -797.7465211360282,
+			"y": 1062.2022963198986,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -3620,8 +3623,8 @@
 			"id": "shape:8KvHPxZtr9UY2NxBmUiW_",
 			"type": "arrow",
 			"props": {
-				"kind": "elbow",
-				"elbowMidPoint": 1,
+				"kind": "arc",
+				"elbowMidPoint": 0.5,
 				"dash": "draw",
 				"size": "m",
 				"fill": "solid",
@@ -4036,10 +4039,10 @@
 				"isPrecise": true,
 				"isExact": false,
 				"normalizedAnchor": {
-					"x": 0,
-					"y": 0.4999999999999999
+					"x": 0.34201830994399235,
+					"y": 0.5408252607224131
 				},
-				"snap": "edge-point",
+				"snap": "none",
 				"terminal": "end"
 			},
 			"typeName": "binding"
@@ -4111,7 +4114,12 @@
 		{
 			"followingUserId": null,
 			"opacityForNextShape": 1,
-			"stylesForNextShape": {},
+			"stylesForNextShape": {
+				"tldraw:color": "blue",
+				"tldraw:fill": "pattern",
+				"tldraw:dash": "solid",
+				"tldraw:arrowKind": "elbow"
+			},
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
@@ -4125,8 +4133,8 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 1025,
-				"h": 677.5
+				"w": 815.2777709960938,
+				"h": 545.1388549804688
 			},
 			"insets": [
 				false,
@@ -4141,11 +4149,11 @@
 			"isChatting": false,
 			"highlightedUserIds": [],
 			"isFocused": true,
-			"devicePixelRatio": 2.4000000953674316,
+			"devicePixelRatio": 2.880000114440918,
 			"isCoarsePointer": false,
 			"isHoveringCanvas": false,
 			"openMenus": [],
-			"isChangingStyle": false,
+			"isChangingStyle": true,
 			"isReadonly": false,
 			"meta": {},
 			"duplicateProps": null,
@@ -4308,8 +4316,8 @@
 			"id": "shape:5o7rKloD-3KjtpNuKeYYb",
 			"type": "arrow",
 			"props": {
-				"kind": "elbow",
-				"elbowMidPoint": 0.7682508582573615,
+				"kind": "arc",
+				"elbowMidPoint": 0.5,
 				"dash": "draw",
 				"size": "m",
 				"fill": "solid",
@@ -4339,7 +4347,7 @@
 				"scale": 1
 			},
 			"parentId": "page:page",
-			"index": "b06iEzW5PJ",
+			"index": "b06jY1Wr7V",
 			"typeName": "shape"
 		},
 		{
@@ -4536,17 +4544,17 @@
 				"isPrecise": true,
 				"isExact": false,
 				"normalizedAnchor": {
-					"x": 0,
-					"y": 0.4999999999999999
+					"x": 0.8408789411665474,
+					"y": 0.8352590107510287
 				},
-				"snap": "edge-point",
+				"snap": "none",
 				"terminal": "end"
 			},
 			"typeName": "binding"
 		},
 		{
-			"x": -806.2315118489299,
-			"y": 1007.6629372841695,
+			"x": -795.813334529897,
+			"y": 958.7746786749948,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -4698,10 +4706,10 @@
 				"isPrecise": true,
 				"isExact": false,
 				"normalizedAnchor": {
-					"x": 0,
-					"y": 0.4999999999999999
+					"x": 0.09319473815752942,
+					"y": 0.4888766203303349
 				},
-				"snap": "edge-point",
+				"snap": "none",
 				"terminal": "end"
 			},
 			"typeName": "binding"
