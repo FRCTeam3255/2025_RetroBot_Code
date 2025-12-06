@@ -11,6 +11,7 @@ import com.frcteam3255.joystick.SN_XboxController;
 import choreo.auto.AutoFactory;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -47,7 +48,7 @@ public class RobotContainer {
 
   private final SN_XboxController conDriver = new SN_XboxController(mapControllers.DRIVER_USB);
   private final SN_XboxController conOperator = new SN_XboxController(mapControllers.OPERATOR_USB);
-
+  private static DigitalInput isPracticeBot = new DigitalInput(RobotMap.PRAC_BOT_DIO);
   private final Drivetrain subDrivetrain = new Drivetrain();
   public final static Rotors rotorsInstance = new Rotors();
   private final DriverStateMachine subDriverStateMachine = new DriverStateMachine(subDrivetrain);
@@ -130,6 +131,10 @@ public class RobotContainer {
         .alongWith(Commands.runOnce(() -> subDriverStateMachine.setDriverState(DriverState.CHOREO)));
   }
 
+  public static boolean isPracticeBot() {
+    return !isPracticeBot.get();
+  }
+  
   public Command getAutonomousCommand() {
     return autoChooser.getSelected();
   }

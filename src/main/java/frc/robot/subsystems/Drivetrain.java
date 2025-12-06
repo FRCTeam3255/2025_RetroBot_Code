@@ -19,6 +19,7 @@ import edu.wpi.first.units.measure.Distance;
 import edu.wpi.first.units.Units;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
+import frc.robot.RobotContainer;
 import frc.robot.RobotMap.mapDrivetrain;
 import frc.robot.constants.ConstDrivetrain;
 import frc.robot.constants.ConstField;
@@ -33,28 +34,15 @@ public class Drivetrain extends SN_SuperSwerve {
   public PoseDriveGroup lastDesiredPoseGroup;
   public Pose2d lastDesiredTarget;
 
-  private static SN_SwerveModule[] modules = new SN_SwerveModule[] {
-      new SN_SwerveModule(0, mapDrivetrain.FRONT_LEFT_DRIVE_CAN, mapDrivetrain.FRONT_LEFT_STEER_CAN,
-          mapDrivetrain.FRONT_LEFT_ABSOLUTE_ENCODER_CAN, ConstDrivetrain.FRONT_LEFT_ABS_ENCODER_OFFSET_ROOKIE,
-          mapDrivetrain.CAN_BUS_NAME),
-      new SN_SwerveModule(1, mapDrivetrain.FRONT_RIGHT_DRIVE_CAN, mapDrivetrain.FRONT_RIGHT_STEER_CAN,
-          mapDrivetrain.FRONT_RIGHT_ABSOLUTE_ENCODER_CAN, ConstDrivetrain.FRONT_RIGHT_ABS_ENCODER_OFFSET_ROOKIE,
-          mapDrivetrain.CAN_BUS_NAME),
-      new SN_SwerveModule(2, mapDrivetrain.BACK_LEFT_DRIVE_CAN, mapDrivetrain.BACK_LEFT_STEER_CAN,
-          mapDrivetrain.BACK_LEFT_ABSOLUTE_ENCODER_CAN, ConstDrivetrain.BACK_LEFT_ABS_ENCODER_OFFSET_ROOKIE,
-          mapDrivetrain.CAN_BUS_NAME),
-      new SN_SwerveModule(3, mapDrivetrain.BACK_RIGHT_DRIVE_CAN, mapDrivetrain.BACK_RIGHT_STEER_CAN,
-          mapDrivetrain.BACK_RIGHT_ABSOLUTE_ENCODER_CAN, ConstDrivetrain.BACK_RIGHT_ABS_ENCODER_OFFSET_ROOKIE,
-          mapDrivetrain.CAN_BUS_NAME),
-  };
 
   public Drivetrain() {
     super(
         ConstDrivetrain.SWERVE_CONSTANTS,
-        modules,
+        (RobotContainer.isPracticeBot()) ? ConstDrivetrain.DRIVETRAIN_ROOKIE.MODULES
+            : ConstDrivetrain.MODULES,
         ConstDrivetrain.WHEELBASE,
         ConstDrivetrain.TRACK_WIDTH,
-        mapDrivetrain.CAN_BUS_NAME,
+        (RobotContainer.isPracticeBot()) ? mapDrivetrain.PROTO_CAN_BUS_NAME : mapDrivetrain.ROOKIE_CAN_BUS_NAME,
         mapDrivetrain.PIGEON_CAN,
         ConstDrivetrain.MIN_STEER_PERCENT,
         ConstDrivetrain.DRIVE_CONFIG,
