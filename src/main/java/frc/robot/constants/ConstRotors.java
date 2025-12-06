@@ -24,6 +24,7 @@ public class ConstRotors {
   public static final double STOP_CLIMBER_MOTOR = 0;
   public static final double RETRACT_CLIMBER_MOTOR_SPEED = -0.5;
   public static final TalonFXConfiguration CLIMBER_CONFIGURATION = new TalonFXConfiguration();
+
   static {
 
     // TODO: replace configurations with real values

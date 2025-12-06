@@ -20,6 +20,7 @@ public class ConstMotion {
   public static final double TRIPLE_ROTATING_PANEL_SPEED = 0.3;
 
   public static final TalonFXConfiguration HOOD_CONFIGURATION = new TalonFXConfiguration();
+
   static {
 
     HOOD_CONFIGURATION.MotorOutput.NeutralMode = NeutralModeValue.Brake;

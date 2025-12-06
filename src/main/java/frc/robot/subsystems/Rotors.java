@@ -8,8 +8,8 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix6.hardware.TalonFX;
 
-import edu.wpi.first.wpilibj.motorcontrol.Talon;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.RobotMap;
 import frc.robot.RobotMap.mapRotors;
 import frc.robot.constants.ConstRotors;
 
@@ -21,6 +21,7 @@ public class Rotors extends SubsystemBase {
   final TalonFX rightflywheelMotor = new TalonFX(mapRotors.RIGHT_FLYWHEEL_CAN);
   final TalonFX leftflywheelMotor = new TalonFX(mapRotors.LEFT_FLYWHEEL_CAN);
   final TalonSRX transferMotor = new TalonSRX(mapRotors.TRANSFER_CAN);
+  final TalonFX climber = new TalonFX(RobotMap.mapRotors.CLIMBER_CAN);
 
   public Rotors() {
     intakeMotor.getConfigurator().apply(ConstRotors.INTAKE_CONFIGURATION);
@@ -29,6 +30,7 @@ public class Rotors extends SubsystemBase {
     rightflywheelMotor.getConfigurator().apply(ConstRotors.FLYWHEEL_CONFIGURATION);
     leftflywheelMotor.getConfigurator().apply(ConstRotors.FLYWHEEL_CONFIGURATION);
   transferMotor.configFactoryDefault();
+   climber.getConfigurator().apply(ConstRotors.CLIMBER_CONFIGURATION);
   }
 
   public void setIntakeMotorSpeed(double speed) {
@@ -57,4 +59,8 @@ public class Rotors extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 
-}
+    public void setClimberSpeed(double speed) {
+      climber.set(speed);
+  
+    }
+  }
