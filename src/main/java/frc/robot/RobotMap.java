@@ -35,7 +35,6 @@ public class RobotMap {
 
   public static class mapMotion {
     public static final int CLIMBER_CAN = 20;
-    public static final int CONTROL_PANEL_WHEEL_CAN = 21;
     public static final int HOOD_CAN = 22;
     public static final int INTAKE_PIVOT = 23;
 
@@ -43,10 +42,10 @@ public class RobotMap {
 
   public static class mapRotors {
     public static final int INTAKE_CAN = 10;
-    public static final int HOPPER_RIGHT_CAN = 14;
+    public static final int TRANSFER_CAN = 11;
     public static final int LEFT_FLYWHEEL_CAN = 12;
     public static final int RIGHT_FLYWHEEL_CAN = 13;
-    public static final int TRANSFER_CAN = 14;
+    public static final int HOPPER_RIGHT_CAN = 14;
     public static final int HOPPER_LEFT_CAN = 15;
   }
 

@@ -4,6 +4,8 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix6.hardware.TalonFX;
 
 import edu.wpi.first.wpilibj.motorcontrol.Talon;
@@ -18,7 +20,7 @@ public class Rotors extends SubsystemBase {
   final TalonFX leftHopperMotor = new TalonFX(mapRotors.HOPPER_LEFT_CAN);
   final TalonFX rightflywheelMotor = new TalonFX(mapRotors.RIGHT_FLYWHEEL_CAN);
   final TalonFX leftflywheelMotor = new TalonFX(mapRotors.LEFT_FLYWHEEL_CAN);
-  final TalonFX transferMotor = new TalonFX(mapRotors.TRANSFER_CAN);
+  final TalonSRX transferMotor = new TalonSRX(mapRotors.TRANSFER_CAN);
 
   public Rotors() {
     intakeMotor.getConfigurator().apply(ConstRotors.INTAKE_CONFIGURATION);
@@ -26,7 +28,7 @@ public class Rotors extends SubsystemBase {
     leftHopperMotor.getConfigurator().apply(ConstRotors.HOPPER_LEFT_CONFIGURATION);
     rightflywheelMotor.getConfigurator().apply(ConstRotors.FLYWHEEL_CONFIGURATION);
     leftflywheelMotor.getConfigurator().apply(ConstRotors.FLYWHEEL_CONFIGURATION);
-    transferMotor.getConfigurator().apply(ConstRotors.TRANSFER_CONFIGURATION);
+  transferMotor.configFactoryDefault();
   }
 
   public void setIntakeMotorSpeed(double speed) {
@@ -46,9 +48,9 @@ public class Rotors extends SubsystemBase {
     leftflywheelMotor.set(speed);
   }
 
-public void setTransferMotorSpeed(double speed){
-transferMotor.set(speed);
-}
+  public void setTransferMotorSpeed(double speed) {
+    transferMotor.set(ControlMode.PercentOutput,speed);
+  }
 
   @Override
   public void periodic() {
