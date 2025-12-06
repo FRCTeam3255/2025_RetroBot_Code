@@ -20,6 +20,11 @@ public class ConstRotors {
   public static final double FLYWHEEL_SPEED = 1;
   public static final TalonFXConfiguration TRANSFER_CONFIGURATION = new TalonFXConfiguration();
   public static final double TRANSFER_SPEED = 1;
+  public static final double EXTEND_CLIMBER_MOTOR_SPEED = 0.5;
+  public static final double STOP_CLIMBER_MOTOR = 0;
+  public static final double RETRACT_CLIMBER_MOTOR_SPEED = -0.5;
+  public static final TalonFXConfiguration CLIMBER_CONFIGURATION = new TalonFXConfiguration();
+
   static {
 
     // TODO: replace configurations with real values
@@ -34,6 +39,9 @@ public class ConstRotors {
 
     FLYWHEEL_CONFIGURATION.MotorOutput.NeutralMode = NeutralModeValue.Coast;
     FLYWHEEL_CONFIGURATION.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;
+
+    CLIMBER_CONFIGURATION.MotorOutput.NeutralMode = NeutralModeValue.Brake;
+    CLIMBER_CONFIGURATION.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
   }
 
 }
