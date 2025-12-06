@@ -137,9 +137,9 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": 655.8358862143601,
-			"y": 80.93555618559662,
-			"lastActivityTimestamp": 1764994261512,
+			"x": 310.39562593682786,
+			"y": 1095.2478109990382,
+			"lastActivityTimestamp": 1764995763305,
 			"meta": {}
 		},
 		{
@@ -940,9 +940,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 954.7099904684791,
-			"y": 69.34682367032363,
-			"z": 0.4229595378860729,
+			"x": 1110.505619963761,
+			"y": -96.91511541146727,
+			"z": 0.4243794447207271,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -1590,8 +1590,15 @@
 			"editingShapeId": null,
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:9B7nrDd00MaheB8kjgtmH",
-				"shape:MaOrc0dEi9bRcYrD6e9Bd"
+				"shape:8KvHPxZtr9UY2NxBmUiW_",
+				"shape:5o7rKloD-3KjtpNuKeYYb",
+				"shape:sXvBv2hFADPW2Yw5q0eiK",
+				"shape:qzA-tHxmq_pf_u8P8-gKW",
+				"shape:GnaolqerFNhjB5wLF0N8m",
+				"shape:uR9EZnu51yw7Afq-Bqykc",
+				"shape:QRlj7pssAVRSsChO5bACt",
+				"shape:L3lAKRQ2QSXl6JJMHwV2C",
+				"shape:ec2OZL964e65lbeImdjM7"
 			],
 			"hoveredShapeId": null,
 			"erasingShapeIds": [],
@@ -4115,9 +4122,6 @@
 			"followingUserId": null,
 			"opacityForNextShape": 1,
 			"stylesForNextShape": {
-				"tldraw:color": "blue",
-				"tldraw:fill": "pattern",
-				"tldraw:dash": "solid",
 				"tldraw:arrowKind": "elbow"
 			},
 			"brush": null,
@@ -4133,8 +4137,8 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 815.2777709960938,
-				"h": 545.1388549804688
+				"w": 1025,
+				"h": 677.5
 			},
 			"insets": [
 				false,
@@ -4149,11 +4153,11 @@
 			"isChatting": false,
 			"highlightedUserIds": [],
 			"isFocused": true,
-			"devicePixelRatio": 2.880000114440918,
+			"devicePixelRatio": 2.4000000953674316,
 			"isCoarsePointer": false,
-			"isHoveringCanvas": false,
+			"isHoveringCanvas": true,
 			"openMenus": [],
-			"isChangingStyle": true,
+			"isChangingStyle": false,
 			"isReadonly": false,
 			"meta": {},
 			"duplicateProps": null,
