@@ -52,11 +52,16 @@ public class ConstDrivetrain {
   // In Rotations: Obtain by aligning all of the wheels in the correct direction
   // and copy-pasting the Raw Absolute Encoder value
 
-  // TODO: Swoffsets
-  public static final double FRONT_LEFT_ABS_ENCODER_OFFSET = -0.319092;
-  public static final double FRONT_RIGHT_ABS_ENCODER_OFFSET = 0.497803;
-  public static final double BACK_LEFT_ABS_ENCODER_OFFSET = -0.053711;
-  public static final double BACK_RIGHT_ABS_ENCODER_OFFSET = 0.318359;
+  // TODO: Swerve offsets
+  public static final double FRONT_LEFT_ABS_ENCODER_OFFSET_PROTO = -0.319092;
+  public static final double FRONT_RIGHT_ABS_ENCODER_OFFSET_PROTO = 0.497803;
+  public static final double BACK_LEFT_ABS_ENCODER_OFFSET_PROTO = -0.053711;
+  public static final double BACK_RIGHT_ABS_ENCODER_OFFSET_PROTO = 0.318359;
+
+  public static final double FRONT_LEFT_ABS_ENCODER_OFFSET_ROOKIE = -0.342041;
+  public static final double FRONT_RIGHT_ABS_ENCODER_OFFSET_ROOKIE = 0.438965;
+  public static final double BACK_LEFT_ABS_ENCODER_OFFSET_ROOKIE = -0.137939;
+  public static final double BACK_RIGHT_ABS_ENCODER_OFFSET_ROOKIE = -0.124023;
 
   public static final double SLOW_MODE_MULTIPLIER = 0.5;
 
@@ -122,7 +127,7 @@ public class ConstDrivetrain {
   public static final double MIN_STEER_PERCENT = 0.01;
 
   // Rotational speed (degrees per second) while manually driving
-  public static final AngularVelocity TURN_SPEED = Units.DegreesPerSecond.of(360);
+  public static final AngularVelocity TURN_SPEED = Units.DegreesPerSecond.of(-360);
 
   // -- Motor Configurations --
   static {
@@ -138,14 +143,14 @@ public class ConstDrivetrain {
     DRIVE_CONFIG.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;
     DRIVE_CONFIG.MotorOutput.NeutralMode = NeutralModeValue.Brake;
     DRIVE_CONFIG.Feedback.SensorToMechanismRatio = SWERVE_CONSTANTS.driveGearRatio;
-    DRIVE_CONFIG.CurrentLimits.SupplyCurrentLimitEnable = false;
+    DRIVE_CONFIG.CurrentLimits.SupplyCurrentLimitEnable = true;
     DRIVE_CONFIG.CurrentLimits.SupplyCurrentLimit = DRIVE_CURRENT_LIMIT.in(Units.Amps);
 
     STEER_CONFIG.Slot0.kP = 100;
     STEER_CONFIG.Slot0.kI = 0.0;
     STEER_CONFIG.Slot0.kD = 0.14414076246334312;
 
-    STEER_CONFIG.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
+    STEER_CONFIG.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;
     STEER_CONFIG.MotorOutput.NeutralMode = NeutralModeValue.Coast;
     STEER_CONFIG.Feedback.SensorToMechanismRatio = SWERVE_CONSTANTS.steerGearRatio;
     STEER_CONFIG.ClosedLoopGeneral.ContinuousWrap = true;
