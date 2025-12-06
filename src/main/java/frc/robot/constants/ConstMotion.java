@@ -5,6 +5,7 @@
 package frc.robot.constants;
 
 import com.ctre.phoenix6.configs.TalonFXConfiguration;
+import com.ctre.phoenix6.signals.GravityTypeValue;
 import com.ctre.phoenix6.signals.InvertedValue;
 import com.ctre.phoenix6.signals.NeutralModeValue;
 
@@ -25,5 +26,13 @@ public class ConstMotion {
 
     HOOD_CONFIGURATION.MotorOutput.NeutralMode = NeutralModeValue.Brake;
     HOOD_CONFIGURATION.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
+
+    // WE ARE GOING TO TUNE TS LATER :fire:
+    HOOD_CONFIGURATION.Slot0.kS = 0;
+    HOOD_CONFIGURATION.Slot0.kG = 0;
+    HOOD_CONFIGURATION.Slot0.kP = 0;
+    HOOD_CONFIGURATION.Slot0.GravityType = GravityTypeValue.Arm_Cosine;
+    HOOD_CONFIGURATION.Feedback.SensorToMechanismRatio = ((0 / 0) * (0 / 0)); // TODO: CHANGE GEAR VALUES
+
   }
 }
