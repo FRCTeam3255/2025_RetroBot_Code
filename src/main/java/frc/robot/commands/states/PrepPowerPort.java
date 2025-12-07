@@ -20,7 +20,7 @@ public class PrepPowerPort extends Command {
   @Override
   public void initialize() {
     RobotContainer.rotorsInstance.setFlywheelMotorSpeed(ConstRotors.FLYWHEEL_SPEED);
-    RobotContainer.motionInstance.angleHood(ConstMotion.ANGLE_HOOD_SPEED);
+    RobotContainer.motionInstance.setHoodAngle(ConstMotion.ANGLE_HOOD_SPEED);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -32,7 +32,7 @@ public class PrepPowerPort extends Command {
   @Override
   public void end(boolean interrupted) {
     RobotContainer.rotorsInstance.setFlywheelMotorSpeed(0);
-    RobotContainer.motionInstance.angleHood(0);
+    RobotContainer.motionInstance.setHoodAngle(0);
   }
 
   // Returns true when the command should end.
