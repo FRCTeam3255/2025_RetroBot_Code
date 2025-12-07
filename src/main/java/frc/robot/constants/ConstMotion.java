@@ -4,9 +4,14 @@
 
 package frc.robot.constants;
 
+import static edu.wpi.first.units.Units.Degrees;
+
 import com.ctre.phoenix6.configs.TalonFXConfiguration;
+import com.ctre.phoenix6.signals.GravityTypeValue;
 import com.ctre.phoenix6.signals.InvertedValue;
 import com.ctre.phoenix6.signals.NeutralModeValue;
+
+import edu.wpi.first.units.measure.Angle;
 
 /** Add your docs here. */
 public class ConstMotion {
@@ -21,9 +26,23 @@ public class ConstMotion {
 
   public static final TalonFXConfiguration HOOD_CONFIGURATION = new TalonFXConfiguration();
 
+  public static final TalonFXConfiguration INTAKE_PIVOT_CONFIGURATION = new TalonFXConfiguration();
+
+  public static final Angle PANEL_ANGLE = Degrees.of(0);
+
   static {
 
     HOOD_CONFIGURATION.MotorOutput.NeutralMode = NeutralModeValue.Brake;
     HOOD_CONFIGURATION.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
+
+    INTAKE_PIVOT_CONFIGURATION.Slot0.kS = 0;
+    INTAKE_PIVOT_CONFIGURATION.Slot0.kG = 0;
+
+    INTAKE_PIVOT_CONFIGURATION.Slot0.kP = 0;
+
+    INTAKE_PIVOT_CONFIGURATION.Slot0.GravityType = GravityTypeValue.Arm_Cosine;
+
+    INTAKE_PIVOT_CONFIGURATION.Feedback.SensorToMechanismRatio = ((0 / 0) * (0 / 0));
+
   }
 }
