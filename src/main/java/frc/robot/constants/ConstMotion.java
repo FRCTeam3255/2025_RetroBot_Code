@@ -19,10 +19,10 @@ public class ConstMotion {
   public static final double INTAKE_PIVOT = 0.5;
 
   public static final Angle HOOD_ANGLE_PCT = Degree.of(1);
-  
+
   public static final Angle HOOD_ANGLE_PFT = Degree.of(0.5);
 
-public static final Angle HOOD_ANGLE_PPP  = Degree.of(0.7);
+  public static final Angle HOOD_ANGLE_PPP = Degree.of(0.7);
 
   public static final double COLOR_ROTATING_PANEL_SPEED = 0.5;
 
@@ -40,7 +40,7 @@ public static final Angle HOOD_ANGLE_PPP  = Degree.of(0.7);
     HOOD_CONFIGURATION.Slot0.kG = 0;
     HOOD_CONFIGURATION.Slot0.kP = 0;
     HOOD_CONFIGURATION.Slot0.GravityType = GravityTypeValue.Arm_Cosine;
-    HOOD_CONFIGURATION.Feedback.SensorToMechanismRatio = ((12 / 30) * (10 / 140)); // TODO: CHANGE GEAR VALUES
+    HOOD_CONFIGURATION.Feedback.SensorToMechanismRatio = ((12.0 / 30.0) * (10.0 / 140.0));
 
   }
 }
