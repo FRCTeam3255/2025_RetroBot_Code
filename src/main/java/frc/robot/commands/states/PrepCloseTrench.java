@@ -24,7 +24,6 @@ public class PrepCloseTrench extends Command {
   public void initialize() {
     RobotContainer.rotorsInstance.setFlywheelMotorSpeed(ConstRotors.FLYWHEEL_SPEED);
     RobotContainer.motionInstance.setHoodAngle(ConstMotion.HOOD_ANGLE_PCT);
-
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -35,6 +34,7 @@ public class PrepCloseTrench extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
+    RobotContainer.rotorsInstance.setFlywheelMotorSpeed(0);
     RobotContainer.motionInstance.setHoodAngle(Degrees.of(0));
   }
 
