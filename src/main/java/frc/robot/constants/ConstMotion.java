@@ -4,17 +4,21 @@
 
 package frc.robot.constants;
 
+import static edu.wpi.first.units.Units.Degree;
+
 import com.ctre.phoenix6.configs.TalonFXConfiguration;
 import com.ctre.phoenix6.signals.GravityTypeValue;
 import com.ctre.phoenix6.signals.InvertedValue;
 import com.ctre.phoenix6.signals.NeutralModeValue;
+
+import edu.wpi.first.units.measure.Angle;
 
 /** Add your docs here. */
 public class ConstMotion {
 
   public static final double INTAKE_PIVOT = 0.5;
 
-  public static final double ANGLE_HOOD_SPEED = 0.5;
+  public static final Angle HOOD_ANGLE = Degree.of(67.67);
 
   public static final double COLOR_ROTATING_PANEL_SPEED = 0.5;
 

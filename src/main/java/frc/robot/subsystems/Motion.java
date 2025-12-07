@@ -38,7 +38,7 @@ public class Motion extends SubsystemBase {
     intakePivot.set(speed);
   }
 
-  public void setHoodAngle(double angleHoodSpeed) {
-    hoodPivot.setControl(positionRequestHoodPivot.withPosition(angleHoodSpeed));
+  public void setHoodAngle(Angle hoodAngle) {
+    hoodPivot.setControl(positionRequestHoodPivot.withPosition(hoodAngle));
   }
 }
