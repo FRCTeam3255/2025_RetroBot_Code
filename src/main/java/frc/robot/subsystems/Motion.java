@@ -4,8 +4,10 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix6.controls.MotionMagicExpoVoltage;
 import com.ctre.phoenix6.hardware.TalonFX;
 
+import edu.wpi.first.units.measure.Angle;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.RobotMap;
 import frc.robot.constants.ConstMotion;
@@ -15,14 +17,16 @@ import frc.robot.constants.ConstMotion;
 
 public class Motion extends SubsystemBase {
   /** Creates a new Motion. */
-  final TalonFX hood = new TalonFX(RobotMap.mapMotion.HOOD_CAN);
+  final TalonFX hoodPivotMotor = new TalonFX(RobotMap.mapMotion.HOOD_CAN);
   final TalonFX intakePivot = new TalonFX(RobotMap.mapMotion.INTAKE_PIVOT);
+
+  MotionMagicExpoVoltage positionRequestHoodPivot = new MotionMagicExpoVoltage(0);
 
   public Motion() {
     // Apply configuration to Climber motor
-    
+
     // Apply configuration to Hood motor
-    hood.getConfigurator().apply(ConstMotion.HOOD_CONFIGURATION);
+    hoodPivotMotor.getConfigurator().apply(ConstMotion.HOOD_CONFIGURATION);
   }
 
   @Override
@@ -34,9 +38,7 @@ public class Motion extends SubsystemBase {
     intakePivot.set(speed);
   }
 
-  
-
-  public void angleHood(double speed) {
-    hood.set(speed);
+  public void setHoodAngle(Angle hoodAngle) {
+    hoodPivotMotor.setControl(positionRequestHoodPivot.withPosition(hoodAngle));
   }
 }
