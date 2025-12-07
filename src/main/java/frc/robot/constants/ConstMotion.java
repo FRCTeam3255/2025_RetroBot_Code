@@ -50,7 +50,7 @@ public class ConstMotion {
 
     INTAKE_PIVOT_CONFIGURATION.Slot0.GravityType = GravityTypeValue.Arm_Cosine;
 
-    INTAKE_PIVOT_CONFIGURATION.Feedback.SensorToMechanismRatio = ((10 / 54) * (20 / 72) * (14 / 38));
+    INTAKE_PIVOT_CONFIGURATION.Feedback.SensorToMechanismRatio = ((10. / 54.) * (20. / 72.) * (14. / 38.));
     // WE ARE GOING TO TUNE TS LATER :fire:
     HOOD_CONFIGURATION.Slot0.kS = 0;
     HOOD_CONFIGURATION.Slot0.kG = 0;
