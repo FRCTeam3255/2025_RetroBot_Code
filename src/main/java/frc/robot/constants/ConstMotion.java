@@ -46,7 +46,8 @@ public class ConstMotion {
 
     INTAKE_PIVOT_CONFIGURATION.Slot0.GravityType = GravityTypeValue.Arm_Cosine;
 
-    INTAKE_PIVOT_CONFIGURATION.Feedback.SensorToMechanismRatio = ((2 / 1) * (3 / 1));
+    INTAKE_PIVOT_CONFIGURATION.Feedback.SensorToMechanismRatio = ((10 / 54) * (20 / 72) * (14 / 38) * (1 / 1)
+        * (1 / 1));
 
   }
 }
