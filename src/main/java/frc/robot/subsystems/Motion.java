@@ -42,10 +42,6 @@ public class Motion extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 
-  public void intakePivot(double speed) {
-    intakePivot.set(speed);
-  }
-
   public void setHoodAngle(Angle hoodAngle) {
     hoodPivotMotor.setControl(positionRequestHoodPivot.withPosition(hoodAngle));
   }
