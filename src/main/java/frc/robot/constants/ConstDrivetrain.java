@@ -76,16 +76,16 @@ public class ConstDrivetrain {
   public static SN_SwerveModule[] MODULES = new SN_SwerveModule[] {
       new SN_SwerveModule(0, mapDrivetrain.FRONT_LEFT_DRIVE_CAN, mapDrivetrain.FRONT_LEFT_STEER_CAN,
           mapDrivetrain.FRONT_LEFT_ABSOLUTE_ENCODER_CAN, ConstDrivetrain.DRIVETRAIN_ROOKIE.FRONT_LEFT_ABS_ENCODER_OFFSET,
-          mapDrivetrain.ROOKIE_CAN_BUS_NAME),
+          mapDrivetrain.CAN_BUS_NAME),
       new SN_SwerveModule(1, mapDrivetrain.FRONT_RIGHT_DRIVE_CAN, mapDrivetrain.FRONT_RIGHT_STEER_CAN,
           mapDrivetrain.FRONT_RIGHT_ABSOLUTE_ENCODER_CAN, ConstDrivetrain.DRIVETRAIN_ROOKIE.FRONT_RIGHT_ABS_ENCODER_OFFSET,
-          mapDrivetrain.ROOKIE_CAN_BUS_NAME),
+          mapDrivetrain.CAN_BUS_NAME),
       new SN_SwerveModule(2, mapDrivetrain.BACK_LEFT_DRIVE_CAN, mapDrivetrain.BACK_LEFT_STEER_CAN,
           mapDrivetrain.BACK_LEFT_ABSOLUTE_ENCODER_CAN, ConstDrivetrain.DRIVETRAIN_ROOKIE.BACK_LEFT_ABS_ENCODER_OFFSET,
-          mapDrivetrain.ROOKIE_CAN_BUS_NAME),
+          mapDrivetrain.CAN_BUS_NAME),
       new SN_SwerveModule(3, mapDrivetrain.BACK_RIGHT_DRIVE_CAN, mapDrivetrain.BACK_RIGHT_STEER_CAN,
           mapDrivetrain.BACK_RIGHT_ABSOLUTE_ENCODER_CAN, ConstDrivetrain.DRIVETRAIN_ROOKIE.BACK_RIGHT_ABS_ENCODER_OFFSET,
-          mapDrivetrain.ROOKIE_CAN_BUS_NAME),
+          mapDrivetrain.CAN_BUS_NAME),
   };
   }
 
