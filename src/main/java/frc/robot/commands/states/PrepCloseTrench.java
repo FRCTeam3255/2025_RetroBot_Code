@@ -6,6 +6,7 @@ package frc.robot.commands.states;
 
 import static edu.wpi.first.units.Units.Degrees;
 
+import edu.wpi.first.units.measure.Angle;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.RobotContainer;
 import frc.robot.constants.ConstMotion;
@@ -21,7 +22,8 @@ public class PrepCloseTrench extends Command {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    RobotContainer.motionInstance.setHoodAngle(ConstMotion.HOOD_ANGLE);
+    RobotContainer.rotorsInstance.setFlywheelMotorSpeed(ConstRotors.FLYWHEEL_SPEED);
+    RobotContainer.motionInstance.setHoodAngle(ConstMotion.HOOD_ANGLE_PCT);
 
   }
 

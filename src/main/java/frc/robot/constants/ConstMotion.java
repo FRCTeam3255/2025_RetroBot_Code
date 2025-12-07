@@ -18,7 +18,11 @@ public class ConstMotion {
 
   public static final double INTAKE_PIVOT = 0.5;
 
-  public static final Angle HOOD_ANGLE = Degree.of(67.67);
+  public static final Angle HOOD_ANGLE_PCT = Degree.of(1);
+  
+  public static final Angle HOOD_ANGLE_PFT = Degree.of(0.5);
+
+public static final Angle HOOD_ANGLE_PPP  = Degree.of(0.7);
 
   public static final double COLOR_ROTATING_PANEL_SPEED = 0.5;
 

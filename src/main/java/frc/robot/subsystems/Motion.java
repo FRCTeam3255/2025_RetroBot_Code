@@ -17,7 +17,7 @@ import frc.robot.constants.ConstMotion;
 
 public class Motion extends SubsystemBase {
   /** Creates a new Motion. */
-  final TalonFX hoodPivot = new TalonFX(RobotMap.mapMotion.HOOD_CAN);
+  final TalonFX hoodPivotMotor = new TalonFX(RobotMap.mapMotion.HOOD_CAN);
   final TalonFX intakePivot = new TalonFX(RobotMap.mapMotion.INTAKE_PIVOT);
 
   MotionMagicExpoVoltage positionRequestHoodPivot = new MotionMagicExpoVoltage(0);
@@ -26,7 +26,7 @@ public class Motion extends SubsystemBase {
     // Apply configuration to Climber motor
 
     // Apply configuration to Hood motor
-    hoodPivot.getConfigurator().apply(ConstMotion.HOOD_CONFIGURATION);
+    hoodPivotMotor.getConfigurator().apply(ConstMotion.HOOD_CONFIGURATION);
   }
 
   @Override
@@ -39,6 +39,6 @@ public class Motion extends SubsystemBase {
   }
 
   public void setHoodAngle(Angle hoodAngle) {
-    hoodPivot.setControl(positionRequestHoodPivot.withPosition(hoodAngle));
+    hoodPivotMotor.setControl(positionRequestHoodPivot.withPosition(hoodAngle));
   }
 }

@@ -22,7 +22,7 @@ public class PrepFarTrench extends Command {
   @Override
   public void initialize() {
     RobotContainer.rotorsInstance.setFlywheelMotorSpeed(ConstRotors.FLYWHEEL_SPEED);
-    RobotContainer.motionInstance.setHoodAngle(ConstMotion.HOOD_ANGLE);
+    RobotContainer.motionInstance.setHoodAngle(ConstMotion.HOOD_ANGLE_PFT);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
