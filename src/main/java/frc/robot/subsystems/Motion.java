@@ -18,11 +18,11 @@ import frc.robot.constants.ConstMotion;
 public class Motion extends SubsystemBase {
   /** Creates a new Motion. */
   final TalonFX hood = new TalonFX(RobotMap.mapMotion.HOOD_CAN);
-  final TalonFX intakePivot = new TalonFX(RobotMap.mapMotion.INTAKE_PIVOT);
+  final TalonFX intakePivotMotor = new TalonFX(RobotMap.mapMotion.INTAKE_PIVOT);
   final MotionMagicExpoVoltage intakePivotRequest = new MotionMagicExpoVoltage(0);
 
-  public void setIntakePivotAngle(Angle panelAngle) {
-    intakePivot.setControl(intakePivotRequest.withPosition(panelAngle));
+  public void setIntakePivotAngle(Angle targetAngle) {
+    intakePivotMotor.setControl(intakePivotRequest.withPosition(targetAngle));
   }
 
   public Motion() {
@@ -30,7 +30,7 @@ public class Motion extends SubsystemBase {
 
     // Apply configuration to Hood motor
     hood.getConfigurator().apply(ConstMotion.HOOD_CONFIGURATION);
-    intakePivot.getConfigurator().apply(ConstMotion.INTAKE_PIVOT_CONFIGURATION);
+    intakePivotMotor.getConfigurator().apply(ConstMotion.INTAKE_PIVOT_CONFIGURATION);
   }
 
   @Override

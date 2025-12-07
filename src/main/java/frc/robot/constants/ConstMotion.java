@@ -30,6 +30,10 @@ public class ConstMotion {
 
   public static final Angle PANEL_ANGLE = Degrees.of(0);
 
+  public static final Angle RETRACT_INTAKE_ANGLE = Degrees.of(0);
+
+  public static final Angle DEPLOY_INTAKE_ANGLE = Degrees.of(0);
+
   static {
 
     HOOD_CONFIGURATION.MotorOutput.NeutralMode = NeutralModeValue.Brake;
