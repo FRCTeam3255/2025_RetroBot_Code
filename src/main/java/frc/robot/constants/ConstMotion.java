@@ -40,7 +40,7 @@ public static final Angle HOOD_ANGLE_PPP  = Degree.of(0.7);
     HOOD_CONFIGURATION.Slot0.kG = 0;
     HOOD_CONFIGURATION.Slot0.kP = 0;
     HOOD_CONFIGURATION.Slot0.GravityType = GravityTypeValue.Arm_Cosine;
-    HOOD_CONFIGURATION.Feedback.SensorToMechanismRatio = 1; // TODO: CHANGE GEAR VALUES
+    HOOD_CONFIGURATION.Feedback.SensorToMechanismRatio = ((12 / 30) * (10 / 140)); // TODO: CHANGE GEAR VALUES
 
   }
 }
