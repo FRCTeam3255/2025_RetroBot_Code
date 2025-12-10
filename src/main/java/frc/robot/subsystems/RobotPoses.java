@@ -7,7 +7,11 @@ package frc.robot.subsystems;
 import edu.wpi.first.epilogue.Logged;
 import edu.wpi.first.epilogue.NotLogged;
 import edu.wpi.first.math.geometry.Pose3d;
+import edu.wpi.first.math.geometry.Rotation3d;
+import edu.wpi.first.math.geometry.Transform3d;
+import edu.wpi.first.units.Units;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.RobotContainer;
 import frc.robot.constants.ConstSystem;
 
 @Logged
@@ -17,8 +21,15 @@ public class RobotPoses extends SubsystemBase {
   @NotLogged
   Drivetrain subDrivetrain;
 
-  Pose3d comp0Drivetrain = Pose3d.kZero;
-  Pose3d comp1Bumpers = Pose3d.kZero.plus(ConstSystem.ROBOT_TO_BUMPERS);
+  Pose3d modelDrivetrain = Pose3d.kZero;
+  Pose3d model0Pivot = Pose3d.kZero;
+
+  Rotation3d pivotRotation3d;
+  Transform3d pivotPoint = new Transform3d(
+      Units.Inches.zero(),
+      Units.Inches.of(16),
+      Units.Inches.zero(),
+      Rotation3d.kZero);
 
   public RobotPoses(Drivetrain subDrivetrain) {
     this.subDrivetrain = subDrivetrain;
@@ -27,8 +38,18 @@ public class RobotPoses extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-
     // Robot Positions
-    comp0Drivetrain = new Pose3d(subDrivetrain.getPose());
+
+    pivotRotation3d = new Rotation3d(
+        RobotContainer.motionInstance.getPivotAngle(),
+        Units.Degrees.zero(),
+        Units.Degrees.zero());
+
+    modelDrivetrain = new Pose3d(subDrivetrain.getPose());
+    model0Pivot = Pose3d.kZero.rotateAround(model0Pivot.plus(pivotPoint).getTranslation(), pivotRotation3d)
+        .rotateBy(new Rotation3d(
+            Units.Degrees.zero(),
+            Units.Degrees.zero(),
+            Units.Degrees.of(-90)));
   }
 }
