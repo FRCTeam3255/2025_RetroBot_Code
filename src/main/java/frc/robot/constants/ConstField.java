@@ -110,12 +110,14 @@ public class ConstField {
 
   public static class FieldElements {
     private static final Pose2d RESET_POSE = new Pose2d(0, 0, new Rotation2d());
-
+    private static final Pose2d PREP_CLOSE_TRENCH_POSE = new Pose2d(0, 0, new Rotation2d());
   }
 
   public static class FieldElementGroups {
     public static final Pose2dAllianceSet RESET_POSE_SET = new Pose2dAllianceSet(
         FieldElements.RESET_POSE);
+      public static final Pose2dAllianceSet PREP_CLOSE_TRENCH_POSE_SET = new Pose2dAllianceSet(
+        FieldElements.PREP_CLOSE_TRENCH_POSE);
   }
 
   public static final Pose2d WORKSHOP_STARTING_POSE = new Pose2d(5.98, 2.60, new Rotation2d(0));

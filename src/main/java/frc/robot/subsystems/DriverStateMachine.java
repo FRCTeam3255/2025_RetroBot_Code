@@ -43,6 +43,8 @@ public class DriverStateMachine extends SubsystemBase {
     MANUAL,
     EXAMPLE_POSE_DRIVE,
     EXAMPLE_ROTATION_SNAP,
+    PREP_CLOSE_TRENCH_POSE_DRIVE,
+    PREP_CLOSE_TRENCH_ROTATION_DRIVE,
     CHOREO
   }
 
@@ -57,8 +59,10 @@ public class DriverStateMachine extends SubsystemBase {
         switch (currentDriverState) {
           case MANUAL:
           case EXAMPLE_POSE_DRIVE:
-          case CHOREO:
-            return () -> new DriveManual(
+          case EXAMPLE_ROTATION_SNAP:
+          case PREP_CLOSE_TRENCH_POSE_DRIVE:
+          case PREP_CLOSE_TRENCH_ROTATION_DRIVE: 
+                   return () -> new DriveManual(
                 subDrivetrain,
                 xAxis,
                 yAxis,
@@ -72,7 +76,10 @@ public class DriverStateMachine extends SubsystemBase {
         switch (currentDriverState) {
           case MANUAL:
           case EXAMPLE_POSE_DRIVE:
-            return () -> new PoseDrive(
+          case EXAMPLE_ROTATION_SNAP:
+          case PREP_CLOSE_TRENCH_POSE_DRIVE:
+          case PREP_CLOSE_TRENCH_ROTATION_DRIVE: 
+                   return () -> new PoseDrive(
                 subDrivetrain,
                 subDriverStateMachine,
                 xAxis,
@@ -85,10 +92,12 @@ public class DriverStateMachine extends SubsystemBase {
 
       case EXAMPLE_ROTATION_SNAP:
         switch (currentDriverState) {
+          case MANUAL:
           case EXAMPLE_POSE_DRIVE:
           case EXAMPLE_ROTATION_SNAP:
-          case MANUAL:
-            return () -> new PoseDrive(
+          case PREP_CLOSE_TRENCH_POSE_DRIVE:
+          case PREP_CLOSE_TRENCH_ROTATION_DRIVE:
+                      return () -> new PoseDrive(
                 subDrivetrain,
                 subDriverStateMachine,
                 xAxis,
@@ -99,7 +108,44 @@ public class DriverStateMachine extends SubsystemBase {
         }
 
         break;
-    }
+
+        case PREP_CLOSE_TRENCH_POSE_DRIVE:
+        switch (currentDriverState) {
+          case MANUAL:
+          case EXAMPLE_POSE_DRIVE:
+          case EXAMPLE_ROTATION_SNAP:
+          case PREP_CLOSE_TRENCH_POSE_DRIVE:
+          case PREP_CLOSE_TRENCH_ROTATION_DRIVE:
+                      return () -> new PoseDrive(
+                subDrivetrain,
+                subDriverStateMachine,
+                xAxis,
+                yAxis,
+                rotationAxis,
+                slowMode,
+                ConstPoseDrive.PREP_CLOSE_TRENCH_POSE_DRIVE_GROUP);
+        }
+        break;
+
+        case PREP_CLOSE_TRENCH_ROTATION_DRIVE:
+        switch (currentDriverState) {
+          case MANUAL:
+          case EXAMPLE_POSE_DRIVE:
+          case EXAMPLE_ROTATION_SNAP:
+          case PREP_CLOSE_TRENCH_POSE_DRIVE:
+          case PREP_CLOSE_TRENCH_ROTATION_DRIVE:
+            return () -> new PoseDrive(
+                subDrivetrain,
+                subDriverStateMachine,
+                xAxis,
+                yAxis,
+                rotationAxis,
+                slowMode,
+                ConstPoseDrive.PREP_CLOSE_TRENCH_POSE_DRIVE_GROUP);
+        }
+        break;
+
+      }
 
     return () -> Commands.print("ITS SO OVER D: Invalid Driver State Provided, Blame Eli. Attempted to go to: "
         + desiredState.toString() + " while at " + currentDriverState.toString());

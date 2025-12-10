@@ -73,7 +73,27 @@ public class RobotContainer {
           conDriver.btn_RightBumper),
       Set.of(subDriverStateMachine));
 
-  public RobotContainer() {
+      Command PREP_CLOSE_TRENCH_POSE_DRIVE = new DeferredCommand(
+        subDriverStateMachine.tryState(
+            DriverStateMachine.DriverState.PREP_CLOSE_TRENCH_POSE_DRIVE,
+            conDriver.axis_LeftY,
+            conDriver.axis_LeftX,
+            conDriver.axis_RightX,
+            conDriver.btn_RightBumper),
+        Set.of(subDriverStateMachine));
+
+        Command PREP_CLOSE_ROTATION_SNAP = new DeferredCommand(
+          subDriverStateMachine.tryState(
+              DriverStateMachine.DriverState.PREP_CLOSE_TRENCH_ROTATION_DRIVE,
+              conDriver.axis_LeftY,
+              conDriver.axis_LeftX,
+              conDriver.axis_RightX,
+              conDriver.btn_RightBumper),
+          Set.of(subDriverStateMachine));
+    
+  
+
+      public RobotContainer() {
     conDriver.setLeftDeadband(constControllers.DRIVER_LEFT_STICK_DEADBAND);
 
     subDriverStateMachine
@@ -138,7 +158,7 @@ public class RobotContainer {
     conOperator.btn_LeftTrigger.whileTrue(new Intaking());
     conOperator.btn_Y.whileTrue(new PrepPowerPort());
     conOperator.btn_B.whileTrue(new PrepFarTrench());
-    conOperator.btn_X.whileTrue(new PrepCloseTrench());
+    conOperator.btn_X.whileTrue(new PrepCloseTrench().alongWith(PREP_CLOSE_TRENCH_POSE_DRIVE));
     conOperator.btn_West.whileTrue(new TripleRotatingPanel());
     conOperator.btn_East.whileTrue(new ColorRotatingPanel());
     conOperator.btn_North.whileTrue(new PrepPanel());
