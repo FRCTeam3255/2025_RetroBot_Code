@@ -57,6 +57,7 @@ public class ConstPoseDrive {
   }
 
   public static final PoseDriveGroup EXAMPLE_POSE_DRIVE_GROUP = new PoseDriveGroup();
+  public static final PoseDriveGroup PREP_CLOSE_TRENCH_POSE_DRIVE_GROUP = new PoseDriveGroup();
 
   static {
     EXAMPLE_POSE_DRIVE_GROUP.minDistanceBeforeDrive = Units.Inches.of(100);
@@ -67,5 +68,15 @@ public class ConstPoseDrive {
     EXAMPLE_POSE_DRIVE_GROUP.lockY = false;
     EXAMPLE_POSE_DRIVE_GROUP.distanceTolerance = Units.Inches.of(1);
     EXAMPLE_POSE_DRIVE_GROUP.rotationTolerance = Units.Degrees.of(1);
+
+    PREP_CLOSE_TRENCH_POSE_DRIVE_GROUP.minDistanceBeforeDrive = Units.Inches.of(100);
+    PREP_CLOSE_TRENCH_POSE_DRIVE_GROUP.targetPoseGroup = ConstField.FieldElementGroups.PREP_CLOSE_TRENCH_POSE_SET
+        .getAll();
+    PREP_CLOSE_TRENCH_POSE_DRIVE_GROUP.driveState = DriverState.PREP_CLOSE_TRENCH_POSE_DRIVE;
+    PREP_CLOSE_TRENCH_POSE_DRIVE_GROUP.snapState = DriverState.PREP_CLOSE_TRENCH_ROTATION_SNAP;
+    PREP_CLOSE_TRENCH_POSE_DRIVE_GROUP.lockX = false;
+    PREP_CLOSE_TRENCH_POSE_DRIVE_GROUP.lockY = false;
+    PREP_CLOSE_TRENCH_POSE_DRIVE_GROUP.distanceTolerance = Units.Inches.of(1);
+    PREP_CLOSE_TRENCH_POSE_DRIVE_GROUP.rotationTolerance = Units.Degrees.of(1);
   }
 }

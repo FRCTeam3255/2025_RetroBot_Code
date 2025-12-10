@@ -43,6 +43,8 @@ public class DriverStateMachine extends SubsystemBase {
     MANUAL,
     EXAMPLE_POSE_DRIVE,
     EXAMPLE_ROTATION_SNAP,
+    PREP_CLOSE_TRENCH_POSE_DRIVE,
+    PREP_CLOSE_TRENCH_ROTATION_SNAP,
     CHOREO
   }
 
@@ -57,6 +59,9 @@ public class DriverStateMachine extends SubsystemBase {
         switch (currentDriverState) {
           case MANUAL:
           case EXAMPLE_POSE_DRIVE:
+          case EXAMPLE_ROTATION_SNAP:
+          case PREP_CLOSE_TRENCH_POSE_DRIVE:
+          case PREP_CLOSE_TRENCH_ROTATION_SNAP:
           case CHOREO:
             return () -> new DriveManual(
                 subDrivetrain,
@@ -72,6 +77,9 @@ public class DriverStateMachine extends SubsystemBase {
         switch (currentDriverState) {
           case MANUAL:
           case EXAMPLE_POSE_DRIVE:
+          case EXAMPLE_ROTATION_SNAP:
+          case PREP_CLOSE_TRENCH_POSE_DRIVE:
+          case PREP_CLOSE_TRENCH_ROTATION_SNAP:
             return () -> new PoseDrive(
                 subDrivetrain,
                 subDriverStateMachine,
@@ -85,9 +93,11 @@ public class DriverStateMachine extends SubsystemBase {
 
       case EXAMPLE_ROTATION_SNAP:
         switch (currentDriverState) {
+          case MANUAL:
           case EXAMPLE_POSE_DRIVE:
           case EXAMPLE_ROTATION_SNAP:
-          case MANUAL:
+          case PREP_CLOSE_TRENCH_POSE_DRIVE:
+          case PREP_CLOSE_TRENCH_ROTATION_SNAP:
             return () -> new PoseDrive(
                 subDrivetrain,
                 subDriverStateMachine,
@@ -96,6 +106,43 @@ public class DriverStateMachine extends SubsystemBase {
                 rotationAxis,
                 slowMode,
                 ConstPoseDrive.EXAMPLE_POSE_DRIVE_GROUP);
+        }
+
+        break;
+
+      case PREP_CLOSE_TRENCH_POSE_DRIVE:
+        switch (currentDriverState) {
+          case MANUAL:
+          case EXAMPLE_POSE_DRIVE:
+          case EXAMPLE_ROTATION_SNAP:
+          case PREP_CLOSE_TRENCH_POSE_DRIVE:
+          case PREP_CLOSE_TRENCH_ROTATION_SNAP:
+            return () -> new PoseDrive(
+                subDrivetrain,
+                subDriverStateMachine,
+                xAxis,
+                yAxis,
+                rotationAxis,
+                slowMode,
+                ConstPoseDrive.PREP_CLOSE_TRENCH_POSE_DRIVE_GROUP);
+        }
+        break;
+
+      case PREP_CLOSE_TRENCH_ROTATION_SNAP:
+        switch (currentDriverState) {
+          case MANUAL:
+          case EXAMPLE_POSE_DRIVE:
+          case EXAMPLE_ROTATION_SNAP:
+          case PREP_CLOSE_TRENCH_POSE_DRIVE:
+          case PREP_CLOSE_TRENCH_ROTATION_SNAP:
+            return () -> new PoseDrive(
+                subDrivetrain,
+                subDriverStateMachine,
+                xAxis,
+                yAxis,
+                rotationAxis,
+                slowMode,
+                ConstPoseDrive.PREP_CLOSE_TRENCH_POSE_DRIVE_GROUP);
         }
 
         break;
