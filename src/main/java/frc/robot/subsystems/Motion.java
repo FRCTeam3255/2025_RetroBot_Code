@@ -22,7 +22,7 @@ public class Motion extends SubsystemBase {
   final TalonFX hoodPivotMotor = new TalonFX(RobotMap.mapMotion.HOOD_CAN);
   final TalonFX intakePivotMotor = new TalonFX(RobotMap.mapMotion.INTAKE_PIVOT);
 
-  MotionMagicExpoVoltage positionRequestHoodPivot = new MotionMagicExpoVoltage(0);
+  final MotionMagicExpoVoltage positionRequestHoodPivot = new MotionMagicExpoVoltage(0);
   final MotionMagicExpoVoltage intakePivotRequest = new MotionMagicExpoVoltage(0);
 
   public void setIntakePivotAngle(Angle targetAngle) {
