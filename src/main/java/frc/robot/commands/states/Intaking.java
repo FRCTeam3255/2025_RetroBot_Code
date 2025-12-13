@@ -19,7 +19,7 @@ public class Intaking extends Command {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    RobotContainer.rotorsInstance.setIntakeMotorSpeed(ConstRotors.INTAKE_MOTOR_SPEED);
+    RobotContainer.rotorsInstance.setIntakeMotorPower(ConstRotors.INTAKE_MOTOR_SPEED);
     RobotContainer.motionInstance.setIntakePivotAngle(ConstMotion.DEPLOY_INTAKE_ANGLE);
   }
 
@@ -31,7 +31,7 @@ public class Intaking extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    RobotContainer.rotorsInstance.setIntakeMotorSpeed(0);
+    RobotContainer.rotorsInstance.setIntakeMotorPower(0);
     RobotContainer.motionInstance.setIntakePivotAngle(ConstMotion.RETRACT_INTAKE_ANGLE);
   }
 

@@ -24,7 +24,6 @@ public class Rotors extends SubsystemBase {
   final TalonFX leftflywheelMotor = new TalonFX(mapRotors.LEFT_FLYWHEEL_CAN);
   final TalonSRX transferMotor = new TalonSRX(mapRotors.TRANSFER_CAN);
   final TalonFX climber = new TalonFX(RobotMap.mapRotors.CLIMBER_CAN);
-  
 
   public Rotors() {
     intakeMotor.getConfigurator().apply(ConstRotors.INTAKE_CONFIGURATION);
@@ -32,32 +31,32 @@ public class Rotors extends SubsystemBase {
     leftHopperMotor.getConfigurator().apply(ConstRotors.HOPPER_LEFT_CONFIGURATION);
     rightflywheelMotor.getConfigurator().apply(ConstRotors.FLYWHEEL_CONFIGURATION);
     leftflywheelMotor.getConfigurator().apply(ConstRotors.FLYWHEEL_CONFIGURATION);
-  transferMotor.configFactoryDefault();
-   climber.getConfigurator().apply(ConstRotors.CLIMBER_CONFIGURATION);
+    transferMotor.configFactoryDefault();
+    climber.getConfigurator().apply(ConstRotors.CLIMBER_CONFIGURATION);
   }
 
   final MotionMagicVelocityVoltage flywheelVelocityRequest = new MotionMagicVelocityVoltage(0);
 
-
-  public void setIntakeMotorSpeed(double speed) {
-    intakeMotor.set(speed);
+  public void setIntakeMotorPower(double power) {
+    intakeMotor.set(power);
   }
 
-  public void setHopperRightMotorSpeed(double speed) {
-    rightHopperMotor.set(speed);
+  public void setHopperRightMotorPower(double power) {
+    rightHopperMotor.set(power);
   }
 
-  public void setHopperLeftMotorSpeed(double speed){
-    leftHopperMotor.set(speed);
+  public void setHopperLeftMotorPower(double power) {
+    leftHopperMotor.set(power);
 
   }
+
   public void setFlywheelMotorSpeed(AngularVelocity speed) {
     rightflywheelMotor.setControl(flywheelVelocityRequest.withVelocity(speed));
     leftflywheelMotor.setControl(flywheelVelocityRequest.withVelocity(speed));
   }
 
-  public void setTransferMotorSpeed(double speed) {
-    transferMotor.set(ControlMode.PercentOutput,speed);
+  public void setTransferMotorPower(double power) {
+    transferMotor.set(ControlMode.PercentOutput, power);
   }
 
   @Override
@@ -65,9 +64,9 @@ public class Rotors extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 
-    public void setClimberSpeed(double speed) {
-      climber.set(speed);
-  
-    }
+  public void setClimberSpeed(double power) {
+    climber.set(power);
 
   }
+
+}
