@@ -116,7 +116,7 @@ public class RobotContainer {
     Command Trench6Cell = Command.sequence(
         new PrepInitLine(),
         new Shooting(),
-        runPath("Drive_To_Close_Trench").alongWith(Commands.runOnce(() -> new Intaking())).asProxy(),
+        runPath("Drive_To_Close_Trench").alongWith(new Intaking()).asProxy(),
         runPath("To_Init_Line"),
         new Shooting());
 
