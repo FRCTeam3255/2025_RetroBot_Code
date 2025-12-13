@@ -107,14 +107,14 @@ public class RobotContainer {
   }
 
   public void configAutonomous() {
-    Command PP3CellReverse = Command.sequence(
+    Command PP3CellReverse = Commands.sequence(
         new PrepInitLine(),
         new Shooting(),
         runPath("Drive_Off_Start_Line").asProxy()
 
     );
 
-    Command Trench6Cell = Command.sequence(
+    Command Trench6Cell = Commands.sequence(
         new PrepInitLine(),
         new Shooting(),
         runPath("Drive_To_Close_Trench").alongWith(new Intaking()).asProxy(),
