@@ -57,6 +57,7 @@ public class ConstMotion {
     HOOD_CONFIGURATION.Slot0.kP = 0;
     HOOD_CONFIGURATION.Slot0.GravityType = GravityTypeValue.Arm_Cosine;
     HOOD_CONFIGURATION.Feedback.SensorToMechanismRatio = ((12.0 / 30.0) * (10.0 / 140.0));
+    
 
   }
 }
