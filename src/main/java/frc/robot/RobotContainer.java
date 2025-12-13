@@ -23,6 +23,7 @@ import frc.robot.commands.states.Intaking;
 import frc.robot.commands.states.PrepClimb;
 import frc.robot.commands.states.PrepCloseTrench;
 import frc.robot.commands.states.PrepFarTrench;
+import frc.robot.commands.states.PrepInitLine;
 import frc.robot.commands.states.PrepPanel;
 import frc.robot.commands.states.PrepPowerPort;
 import frc.robot.commands.states.Shooting;
@@ -116,15 +117,15 @@ public class RobotContainer {
        
     );
     Command PP3CellReverse = Commands.sequence(
-      new PrepInitLine(),
+      new PrepInitLine (),
       new Shooting(),
       runPath("Drive_OFF_Start_line").asProxy()
         );
         
           Command Trench6Cell = Commands.sequence(
-      new PrepInitLine(),
+      new PrepInitLine (),
       new Shooting(),
-      runPath("Trench6Cell").asProxy(),
+      runPath("Trench6Cell").alongWith(Commands.runOnce(() -> new Intaking())).asProxy(),
       runPath("To_Init_Line").asProxy(),
       new Shooting()
           );
