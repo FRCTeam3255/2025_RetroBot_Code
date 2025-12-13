@@ -4,6 +4,9 @@
 
 package frc.robot;
 
+import static edu.wpi.first.units.Units.Seconds;
+
+import java.util.Map;
 import java.util.Set;
 
 import com.frcteam3255.joystick.SN_XboxController;
@@ -108,18 +111,18 @@ public class RobotContainer {
 
   public void configAutonomous() {
     Command PP3CellReverse = Commands.sequence(
-        new PrepInitLine(),
-        new Shooting(),
-        runPath("Drive_Off_Start_Line").asProxy()
+        new PrepInitLine().withTimeout(.5),
+        new Shooting().withTimeout(.5),
+        runPath("InitPP_OffInitPP").asProxy()
 
     );
 
     Command Trench6Cell = Commands.sequence(
-        new PrepInitLine(),
-        new Shooting(),
-        runPath("Drive_To_Close_Trench").alongWith(new Intaking()).asProxy(),
-        runPath("To_Init_Line").asProxy(),
-        new Shooting());
+        new PrepInitLine().withTimeout(.5),
+        new Shooting().withTimeout(.5),
+        runPath("InitTrench_ControlPanel").alongWith(new Intaking()).asProxy(),
+        runPath("ControlPanel_InitTrench").asProxy(),
+        new Shooting().withTimeout(.5));
 
     autoChooser.setDefaultOption("PP3CellReverse", PP3CellReverse);
     autoChooser.addOption("Trench6Cell", Trench6Cell);
@@ -131,6 +134,19 @@ public class RobotContainer {
         true, // If alliance flipping should be enabled
         subDriverStateMachine // The drive subsystem
     );
+
+    Map<Command, String> autoStartingPoses = Map.ofEntries(
+        Map.entry(PP3CellReverse, "InitPP_OffInitPP"),
+        Map.entry(Trench6Cell, "InitTrench_ControlPanel"));
+
+    autoChooser.onChange(selectedAuto -> {
+      String startingPose = autoStartingPoses.get(selectedAuto);
+      if (startingPose != null) {
+        autoFactory.resetOdometry(startingPose)
+            .ignoringDisable(true)
+            .schedule();
+      }
+    });
 
     // Example: Add autonomous routines to the chooser
     autoChooser.setDefaultOption("Do Nothing", Commands.none());
