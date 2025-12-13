@@ -106,6 +106,23 @@ public class RobotContainer {
   }
 
   public void configAutonomous() {
+    Command PP3CellReverse = Command.sequence(
+        new PrepInitLine(),
+        new Shooting(),
+        runPath("Drive_Off_Start_Line")
+
+    );
+
+    Command Trench6Cell = Command.sequence(
+        new PrepInitLine(),
+        new Shooting(),
+        runPath("Drive_To_Close_Trench").alongWith(Commands.runOnce(() -> new Intaking())).asProxy(),
+        runPath("To_Init_Line"),
+        new Shooting());
+
+    autoChooser.setDefaultOption("Auto Routine 1", PP3CellReverse);
+    autoChooser.addOption("Auto Routine 2", Trench6Cell);
+
     autoFactory = new AutoFactory(
         subDrivetrain::getPose, // A function that returns the current robot pose
         subDrivetrain::resetPoseToPose, // A function that resets the current robot pose to the provided Pose2d
