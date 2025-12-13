@@ -23,6 +23,7 @@ import frc.robot.commands.states.Intaking;
 import frc.robot.commands.states.PrepClimb;
 import frc.robot.commands.states.PrepCloseTrench;
 import frc.robot.commands.states.PrepFarTrench;
+import frc.robot.commands.states.PrepInitLine;
 import frc.robot.commands.states.PrepPanel;
 import frc.robot.commands.states.PrepPowerPort;
 import frc.robot.commands.states.Shooting;
@@ -109,7 +110,7 @@ public class RobotContainer {
     Command PP3CellReverse = Command.sequence(
         new PrepInitLine(),
         new Shooting(),
-        runPath("Drive_Off_Start_Line")
+        runPath("Drive_Off_Start_Line").asProxy()
 
     );
 
@@ -117,11 +118,11 @@ public class RobotContainer {
         new PrepInitLine(),
         new Shooting(),
         runPath("Drive_To_Close_Trench").alongWith(new Intaking()).asProxy(),
-        runPath("To_Init_Line"),
+        runPath("To_Init_Line").asProxy(),
         new Shooting());
 
-    autoChooser.setDefaultOption("Auto Routine 1", PP3CellReverse);
-    autoChooser.addOption("Auto Routine 2", Trench6Cell);
+    autoChooser.setDefaultOption("PP3CellReverse", PP3CellReverse);
+    autoChooser.addOption("Trench6Cell", Trench6Cell);
 
     autoFactory = new AutoFactory(
         subDrivetrain::getPose, // A function that returns the current robot pose
