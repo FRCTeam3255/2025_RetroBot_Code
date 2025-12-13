@@ -49,7 +49,14 @@ public class ConstRotors {
 
     FLYWHEEL_CONFIGURATION.Slot0.kS = 0; 
     FLYWHEEL_CONFIGURATION.Slot0.kV = 0;
+    FLYWHEEL_CONFIGURATION.Slot0.kS = 0; 
+    FLYWHEEL_CONFIGURATION.Slot0.kV = 0;
     FLYWHEEL_CONFIGURATION.Slot0.kA = 0;
+    FLYWHEEL_CONFIGURATION.Slot0.kP = 0;
+    
+    FLYWHEEL_CONFIGURATION.MotionMagic.MotionMagicCruiseVelocity = 60;
+    FLYWHEEL_CONFIGURATION.MotionMagic.MotionMagicAcceleration = 600;
+    FLYWHEEL_CONFIGURATION.MotionMagic.MotionMagicJerk = 6000;
   
   }
 
