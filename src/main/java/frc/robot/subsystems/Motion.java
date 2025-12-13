@@ -8,9 +8,11 @@ import com.ctre.phoenix6.controls.MotionMagicExpoVoltage;
 import com.ctre.phoenix6.controls.MotionMagicExpoVoltage;
 import com.ctre.phoenix6.hardware.TalonFX;
 
+import edu.wpi.first.units.Units;
 import edu.wpi.first.units.measure.Angle;
 import edu.wpi.first.units.measure.Angle;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Robot;
 import frc.robot.RobotMap;
 import frc.robot.constants.ConstMotion;
 // import frc.robot.subsystems.Climber; // Ensure Climber class exists in this package
@@ -21,12 +23,14 @@ public class Motion extends SubsystemBase {
   /** Creates a new Motion. */
   final TalonFX hoodPivotMotor = new TalonFX(RobotMap.mapMotion.HOOD_CAN);
   final TalonFX intakePivotMotor = new TalonFX(RobotMap.mapMotion.INTAKE_PIVOT);
+  private Angle pivotLastDesiredAngle = Units.Degrees.zero();
 
   final MotionMagicExpoVoltage positionRequestHoodPivot = new MotionMagicExpoVoltage(0);
   final MotionMagicExpoVoltage intakePivotRequest = new MotionMagicExpoVoltage(0);
 
   public void setIntakePivotAngle(Angle targetAngle) {
     intakePivotMotor.setControl(intakePivotRequest.withPosition(targetAngle));
+    pivotLastDesiredAngle = targetAngle;
   }
 
   public Motion() {
@@ -44,5 +48,12 @@ public class Motion extends SubsystemBase {
 
   public void setHoodAngle(Angle hoodAngle) {
     hoodPivotMotor.setControl(positionRequestHoodPivot.withPosition(hoodAngle));
+  }
+
+  public Angle getPivotAngle() {
+    if (Robot.isSimulation()) {
+      return pivotLastDesiredAngle;
+    }
+    return intakePivotMotor.getPosition().getValue();
   }
 }
