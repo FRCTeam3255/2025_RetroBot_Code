@@ -33,8 +33,8 @@ public class PrepInitLine extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    RobotContainer.rotorsInstance.setFlywheelMotorSpeed(ConstRotors.FLYWHEEL_SPEED);
-    RobotContainer.motionInstance.setHoodAngle(ConstMotion.HOOD_ANGLE_PIL);
+    RobotContainer.rotorsInstance.setFlywheelMotorSpeed(RPM.of(0));
+    RobotContainer.motionInstance.setHoodAngle(Degrees.of(0));
   }
 
   // Returns true when the command should end.
