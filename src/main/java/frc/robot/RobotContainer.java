@@ -23,6 +23,7 @@ import frc.robot.commands.states.Intaking;
 import frc.robot.commands.states.PrepClimb;
 import frc.robot.commands.states.PrepCloseTrench;
 import frc.robot.commands.states.PrepFarTrench;
+import frc.robot.commands.states.PrepInitLine;
 import frc.robot.commands.states.PrepPanel;
 import frc.robot.commands.states.PrepPowerPort;
 import frc.robot.commands.states.Shooting;
@@ -112,14 +113,31 @@ public class RobotContainer {
         subDrivetrain::followTrajectory, // The drive subsystem trajectory follower
         true, // If alliance flipping should be enabled
         subDriverStateMachine // The drive subsystem
+  
+       
     );
+    Command PP3CellReverse = Commands.sequence(
+      new PrepInitLine (),
+      new Shooting(),
+      runPath("Drive_OFF_Start_line").asProxy()
+        );
+        
+          Command Trench6Cell = Commands.sequence(
+      new PrepInitLine (),
+      new Shooting(),
+      runPath("Trench6Cell").alongWith(new Intaking()).asProxy(),
+      runPath("To_Init_Line").asProxy(),
+      new Shooting()
+          );
+
 
     // Example: Add autonomous routines to the chooser
     autoChooser.setDefaultOption("Do Nothing", Commands.none());
-    autoChooser.addOption("Example Path", runPath("ExamplePath"));
+    autoChooser.addOption("PP3CellReverse", PP3CellReverse);
+    autoChooser.addOption("Trench6Cell", Trench6Cell);
     // Add more autonomous routines as needed, e.g.:
     // autoChooser.addOption("Score and Leave", runPath("ScoreAndLeave"));
-
+  
     SmartDashboard.putData("Auto Chooser", autoChooser);
   }
 
