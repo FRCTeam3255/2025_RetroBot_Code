@@ -114,14 +114,30 @@ public class RobotContainer {
         subDrivetrain::followTrajectory, // The drive subsystem trajectory follower
         true, // If alliance flipping should be enabled
         subDriverStateMachine // The drive subsystem
+  
+       
     );
+    Command PP3CellReverse = Commands.sequence(
+      new PrepInitLine(),
+      new Shooting(),
+      runPath("Drive_OFF_Start_line").asProxy()
+        );
+        
+          Command Trench6Cell = Commands.sequence(
+      new PrepInitLine(),
+      new Shooting(),
+      runPath("Trench6Cell").asProxy(),
+      runPath("To_Init_Line").asProxy(),
+      new Shooting()
+          );
+
 
     // Example: Add autonomous routines to the chooser
     autoChooser.setDefaultOption("Do Nothing", Commands.none());
     autoChooser.addOption("Example Path", runPath("ExamplePath"));
     // Add more autonomous routines as needed, e.g.:
     // autoChooser.addOption("Score and Leave", runPath("ScoreAndLeave"));
-
+  
     SmartDashboard.putData("Auto Chooser", autoChooser);
   }
 
