@@ -134,7 +134,8 @@ public class RobotContainer {
 
     // Example: Add autonomous routines to the chooser
     autoChooser.setDefaultOption("Do Nothing", Commands.none());
-    autoChooser.addOption("Example Path", runPath("ExamplePath"));
+    autoChooser.addOption("PP3CellReverse", runPath("PP3CellReverse"));
+    autoChooser.addOption("Trench6Cell", runPath("Trench6Cell"));
     // Add more autonomous routines as needed, e.g.:
     // autoChooser.addOption("Score and Leave", runPath("ScoreAndLeave"));
   
