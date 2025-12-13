@@ -13,9 +13,9 @@ import frc.robot.constants.ConstMotion;
 import frc.robot.constants.ConstRotors;
 
 /* You should consider using the more terse Command factories API instead https://docs.wpilib.org/en/stable/docs/software/commandbased/organizing-command-based.html#defining-commands */
-public class PrepFarTrench extends Command {
-  /** Creates a new PrepFarTrench. */
-  public PrepFarTrench() {
+public class PrepInitLine extends Command {
+  /** Creates a new PrepInitLine. */
+  public PrepInitLine() {
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
@@ -23,18 +23,17 @@ public class PrepFarTrench extends Command {
   @Override
   public void initialize() {
     RobotContainer.rotorsInstance.setFlywheelMotorSpeed(ConstRotors.FLYWHEEL_SPEED);
-    RobotContainer.motionInstance.setHoodAngle(ConstMotion.HOOD_ANGLE_PFT);
+    RobotContainer.motionInstance.setHoodAngle(ConstMotion.HOOD_ANGLE_PIL);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {
-  }
+  public void execute() {}
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    RobotContainer.rotorsInstance.setFlywheelMotorSpeed(RPM.of (0));
+    RobotContainer.rotorsInstance.setFlywheelMotorSpeed(RPM.of(0));
     RobotContainer.motionInstance.setHoodAngle(Degrees.of(0));
   }
 

@@ -4,8 +4,12 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix6.controls.MotionMagicExpoVoltage;
+import com.ctre.phoenix6.controls.MotionMagicExpoVoltage;
 import com.ctre.phoenix6.hardware.TalonFX;
 
+import edu.wpi.first.units.measure.Angle;
+import edu.wpi.first.units.measure.Angle;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.RobotMap;
 import frc.robot.constants.ConstMotion;
@@ -15,14 +19,22 @@ import frc.robot.constants.ConstMotion;
 
 public class Motion extends SubsystemBase {
   /** Creates a new Motion. */
-  final TalonFX climber = new TalonFX(RobotMap.mapMotion.CLIMBER_CAN);
-  final TalonFX hood = new TalonFX(RobotMap.mapMotion.HOOD_CAN);
+  final TalonFX hoodPivotMotor = new TalonFX(RobotMap.mapMotion.HOOD_CAN);
+  final TalonFX intakePivotMotor = new TalonFX(RobotMap.mapMotion.INTAKE_PIVOT);
+
+  final MotionMagicExpoVoltage positionRequestHoodPivot = new MotionMagicExpoVoltage(0);
+  final MotionMagicExpoVoltage intakePivotRequest = new MotionMagicExpoVoltage(0);
+
+  public void setIntakePivotAngle(Angle targetAngle) {
+    intakePivotMotor.setControl(intakePivotRequest.withPosition(targetAngle));
+  }
 
   public Motion() {
     // Apply configuration to Climber motor
-    climber.getConfigurator().apply(ConstMotion.CLIMBER_CONFIGURATION);
+
     // Apply configuration to Hood motor
-    hood.getConfigurator().apply(ConstMotion.HOOD_CONFIGURATION);
+    hoodPivotMotor.getConfigurator().apply(ConstMotion.HOOD_CONFIGURATION);
+    intakePivotMotor.getConfigurator().apply(ConstMotion.INTAKE_PIVOT_CONFIGURATION);
   }
 
   @Override
@@ -30,12 +42,7 @@ public class Motion extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 
-  public void setClimberSpeed(double speed) {
-    climber.set(speed);
-
-  }
-
-  public void angleHood(double speed) {
-    hood.set(speed);
+  public void setHoodAngle(Angle hoodAngle) {
+    hoodPivotMotor.setControl(positionRequestHoodPivot.withPosition(hoodAngle));
   }
 }

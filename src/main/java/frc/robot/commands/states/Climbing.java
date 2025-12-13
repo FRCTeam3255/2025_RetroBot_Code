@@ -6,7 +6,7 @@ package frc.robot.commands.states;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.RobotContainer;
-import frc.robot.constants.ConstMotion;
+import frc.robot.constants.ConstRotors;
 
 /* You should consider using the more terse Command factories API instead https://docs.wpilib.org/en/stable/docs/software/commandbased/organizing-command-based.html#defining-commands */
 public class Climbing extends Command {
@@ -18,7 +18,7 @@ public class Climbing extends Command {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    RobotContainer.motionInstance.setClimberSpeed(ConstMotion.RETRACT_CLIMBER_MOTOR_SPEED);
+    RobotContainer.rotorsInstance.setClimberSpeed(ConstRotors.RETRACT_CLIMBER_MOTOR_SPEED);
 
   }
 
@@ -31,7 +31,7 @@ public class Climbing extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    RobotContainer.motionInstance.setClimberSpeed(0);
+    RobotContainer.rotorsInstance.setClimberSpeed(0);
 
   }
 

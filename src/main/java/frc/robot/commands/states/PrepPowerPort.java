@@ -4,6 +4,9 @@
 
 package frc.robot.commands.states;
 
+import static edu.wpi.first.units.Units.Degrees;
+import static edu.wpi.first.units.Units.RPM;
+
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.RobotContainer;
 import frc.robot.constants.ConstMotion;
@@ -20,7 +23,7 @@ public class PrepPowerPort extends Command {
   @Override
   public void initialize() {
     RobotContainer.rotorsInstance.setFlywheelMotorSpeed(ConstRotors.FLYWHEEL_SPEED);
-    RobotContainer.motionInstance.angleHood(ConstMotion.ANGLE_HOOD_SPEED);
+    RobotContainer.motionInstance.setHoodAngle(ConstMotion.HOOD_ANGLE_PPP);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -31,8 +34,8 @@ public class PrepPowerPort extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    RobotContainer.rotorsInstance.setFlywheelMotorSpeed(0);
-    RobotContainer.motionInstance.angleHood(0);
+    RobotContainer.rotorsInstance.setFlywheelMotorSpeed(RPM.of(0));
+    RobotContainer.motionInstance.setHoodAngle(Degrees.of(0));
   }
 
   // Returns true when the command should end.
