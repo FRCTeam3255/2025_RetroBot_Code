@@ -38,28 +38,30 @@ public class ConstMotion {
 
   public static final Angle RETRACT_INTAKE_ANGLE = Degrees.of(0);
 
-  public static final Angle DEPLOY_INTAKE_ANGLE = Degrees.of(0);
+  public static final Angle DEPLOY_INTAKE_ANGLE = Degrees.of(100);
 
   static {
 
     HOOD_CONFIGURATION.MotorOutput.NeutralMode = NeutralModeValue.Brake;
     HOOD_CONFIGURATION.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
 
-    INTAKE_PIVOT_CONFIGURATION.Slot0.kS = 0;
-    INTAKE_PIVOT_CONFIGURATION.Slot0.kG = 0;
+    INTAKE_PIVOT_CONFIGURATION.MotorOutput.NeutralMode = NeutralModeValue.Brake;
+    INTAKE_PIVOT_CONFIGURATION.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;
 
-    INTAKE_PIVOT_CONFIGURATION.Slot0.kP = 0;
+    INTAKE_PIVOT_CONFIGURATION.Slot0.kS = 0.2;
+    INTAKE_PIVOT_CONFIGURATION.Slot0.kG = -.1;
+
+    INTAKE_PIVOT_CONFIGURATION.Slot0.kP = 50;
 
     INTAKE_PIVOT_CONFIGURATION.Slot0.GravityType = GravityTypeValue.Arm_Cosine;
 
-    INTAKE_PIVOT_CONFIGURATION.Feedback.SensorToMechanismRatio = ((10. / 54.) * (20. / 72.) * (14. / 38.));
+    INTAKE_PIVOT_CONFIGURATION.Feedback.SensorToMechanismRatio = 1. / ((10. / 54.) * (20. / 72.) * (14. / 38.));
     // WE ARE GOING TO TUNE TS LATER :fire:
     HOOD_CONFIGURATION.Slot0.kS = 0;
     HOOD_CONFIGURATION.Slot0.kG = 0;
     HOOD_CONFIGURATION.Slot0.kP = 0;
     HOOD_CONFIGURATION.Slot0.GravityType = GravityTypeValue.Arm_Cosine;
     HOOD_CONFIGURATION.Feedback.SensorToMechanismRatio = ((12.0 / 30.0) * (10.0 / 140.0));
-    
 
   }
 }
