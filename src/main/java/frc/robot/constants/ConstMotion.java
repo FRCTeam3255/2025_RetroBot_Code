@@ -48,10 +48,10 @@ public class ConstMotion {
     INTAKE_PIVOT_CONFIGURATION.MotorOutput.NeutralMode = NeutralModeValue.Brake;
     INTAKE_PIVOT_CONFIGURATION.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;
 
-    INTAKE_PIVOT_CONFIGURATION.Slot0.kS = 0;
-    INTAKE_PIVOT_CONFIGURATION.Slot0.kG = 0;
+    INTAKE_PIVOT_CONFIGURATION.Slot0.kS = 0.2;
+    INTAKE_PIVOT_CONFIGURATION.Slot0.kG = -.1;
 
-    INTAKE_PIVOT_CONFIGURATION.Slot0.kP = 0;
+    INTAKE_PIVOT_CONFIGURATION.Slot0.kP = 50;
 
     INTAKE_PIVOT_CONFIGURATION.Slot0.GravityType = GravityTypeValue.Arm_Cosine;
 
