@@ -4,6 +4,9 @@
 
 package frc.robot;
 
+import static edu.wpi.first.units.Units.Seconds;
+
+import java.util.Map;
 import java.util.Set;
 
 import com.frcteam3255.joystick.SN_XboxController;
@@ -23,6 +26,7 @@ import frc.robot.commands.states.Intaking;
 import frc.robot.commands.states.PrepClimb;
 import frc.robot.commands.states.PrepCloseTrench;
 import frc.robot.commands.states.PrepFarTrench;
+import frc.robot.commands.states.PrepInitLine;
 import frc.robot.commands.states.PrepPanel;
 import frc.robot.commands.states.PrepPowerPort;
 import frc.robot.commands.states.Shooting;
@@ -79,6 +83,14 @@ public class RobotContainer {
     subDriverStateMachine
         .setDefaultCommand(MANUAL);
 
+    autoFactory = new AutoFactory(
+        subDrivetrain::getPose, // A function that returns the current robot pose
+        subDrivetrain::resetPoseToPose, // A function that resets the current robot pose to the provided Pose2d
+        subDrivetrain::followTrajectory, // The drive subsystem trajectory follower
+        true, // If alliance flipping should be enabled
+        subDriverStateMachine // The drive subsystem
+    );
+
     configDriverBindings();
     configOperatorBindings();
     configAutonomous();
@@ -106,17 +118,36 @@ public class RobotContainer {
   }
 
   public void configAutonomous() {
-    autoFactory = new AutoFactory(
-        subDrivetrain::getPose, // A function that returns the current robot pose
-        subDrivetrain::resetPoseToPose, // A function that resets the current robot pose to the provided Pose2d
-        subDrivetrain::followTrajectory, // The drive subsystem trajectory follower
-        true, // If alliance flipping should be enabled
-        subDriverStateMachine // The drive subsystem
+    Command PP3CellReverse = Commands.sequence(
+        new PrepInitLine().withTimeout(.5),
+        new Shooting().withTimeout(.5),
+        runPath("InitPP_OffInitPP").asProxy()
+
     );
 
-    // Example: Add autonomous routines to the chooser
-    autoChooser.setDefaultOption("Do Nothing", Commands.none());
-    autoChooser.addOption("Example Path", runPath("ExamplePath"));
+    Command Trench6Cell = Commands.sequence(
+        new PrepInitLine().withTimeout(.5),
+        new Shooting().withTimeout(.5),
+        runPath("InitTrench_ControlPanel").alongWith(new Intaking().withTimeout(.5)).asProxy(),
+        runPath("ControlPanel_InitTrench").asProxy(),
+        new Shooting().withTimeout(.5));
+
+    autoChooser.setDefaultOption("PP3CellReverse", PP3CellReverse);
+    autoChooser.addOption("Trench6Cell", Trench6Cell);
+
+    Map<Command, String> autoStartingPoses = Map.ofEntries(
+        Map.entry(PP3CellReverse, "InitPP_OffInitPP"),
+        Map.entry(Trench6Cell, "InitTrench_ControlPanel"));
+
+    autoChooser.onChange(selectedAuto -> {
+      String startingPose = autoStartingPoses.get(selectedAuto);
+      if (startingPose != null) {
+        autoFactory.resetOdometry(startingPose)
+            .ignoringDisable(true)
+            .schedule();
+      }
+    });
+
     // Add more autonomous routines as needed, e.g.:
     // autoChooser.addOption("Score and Leave", runPath("ScoreAndLeave"));
 
