@@ -67,4 +67,5 @@
   "git.pullBeforeCheckout": true,
   "java.saveActions.organizeImports": true,
   "workbench.iconTheme": "material-icon-theme",
+  "java.debug.settings.onBuildFailureProceed": true,
 }

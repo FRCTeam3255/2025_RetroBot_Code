@@ -4,7 +4,36 @@
  "type":"Swerve",
  "variables":{
   "expressions":{},
-  "poses":{}
+  "poses":{
+   "ControlPanel":{
+    "x":{
+     "exp":"27 ft",
+     "val":8.2296
+    },
+    "y":{
+     "exp":"Control_Panel.y",
+     "val":7.010400000000001
+    },
+    "heading":{
+     "exp":"Control_Panel.heading",
+     "val":3.490658503988659
+    }
+   },
+   "InitTrench":{
+    "x":{
+     "exp":"10 ft",
+     "val":3.048
+    },
+    "y":{
+     "exp":"InitTrenchPP.y",
+     "val":7.010400000000001
+    },
+    "heading":{
+     "exp":"InitTrenchPP.heading",
+     "val":3.490658503988659
+    }
+   }
+  }
  },
  "config":{
   "frontLeft":{

@@ -116,6 +116,7 @@ public class RobotContainer {
         subDriverStateMachine // The drive subsystem
 
     );
+    
     Command PP3CellReverse = Commands.sequence(
         new PrepInitLine().withTimeout(.5),
         new Shooting().withTimeout(.5),
@@ -124,7 +125,7 @@ public class RobotContainer {
     Command Trench6Cell = Commands.sequence(
         new PrepInitLine().withTimeout(.5),
         new Shooting().withTimeout(.5),
-        runPath("InitTrench_ControlPanel").alongWith(new Intaking()).asProxy(),
+        runPath("InitTrench_ControlPanel").alongWith(new Intaking().withTimeout(.5)).asProxy(),
         runPath("ControlPanel_InitTrench").asProxy(),
         new Shooting().withTimeout(.5));
 
