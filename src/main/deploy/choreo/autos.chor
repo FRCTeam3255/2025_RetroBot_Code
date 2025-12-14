@@ -11,11 +11,11 @@
      "val":8.2296
     },
     "y":{
-     "exp":"Control_Panel.y",
+     "exp":"23 ft",
      "val":7.010400000000001
     },
     "heading":{
-     "exp":"Control_Panel.heading",
+     "exp":"200 deg",
      "val":3.490658503988659
     }
    },
@@ -25,11 +25,11 @@
      "val":3.048
     },
     "y":{
-     "exp":"InitTrenchPP.y",
+     "exp":"23 ft",
      "val":7.010400000000001
     },
     "heading":{
-     "exp":"InitTrenchPP.heading",
+     "exp":"200 deg",
      "val":3.490658503988659
     }
    }
