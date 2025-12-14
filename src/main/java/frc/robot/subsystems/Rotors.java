@@ -50,7 +50,7 @@ public class Rotors extends SubsystemBase {
 
   }
 
-  public void setFlywheelMotorSpeed(AngularVelocity speed) {
+  public void setFlywheelMotorPower(AngularVelocity speed) {
     rightflywheelMotor.setControl(flywheelVelocityRequest.withVelocity(speed));
     leftflywheelMotor.setControl(flywheelVelocityRequest.withVelocity(speed));
   }
@@ -64,7 +64,7 @@ public class Rotors extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 
-  public void setClimberSpeed(double power) {
+  public void setClimberPower(double power) {
     climber.set(power);
 
   }

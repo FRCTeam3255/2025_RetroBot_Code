@@ -19,10 +19,10 @@ public class Shooting extends Command {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    RobotContainer.rotorsInstance.setHopperRightMotorPower(ConstRotors.HOPPER_RIGHT_MOTOR_SPEED);
-    RobotContainer.rotorsInstance.setHopperLeftMotorPower(ConstRotors.HOPPER_LEFT_MOTOR_SPEED);
-    RobotContainer.rotorsInstance.setTransferMotorPower(ConstRotors.TRANSFER_SPEED);
-    RobotContainer.rotorsInstance.setIntakeMotorPower(ConstRotors.INTAKE_MOTOR_SPEED);
+    RobotContainer.rotorsInstance.setHopperRightMotorPower(ConstRotors.HOPPER_RIGHT_MOTOR_POWER);
+    RobotContainer.rotorsInstance.setHopperLeftMotorPower(ConstRotors.HOPPER_LEFT_MOTOR_POWER);
+    RobotContainer.rotorsInstance.setTransferMotorPower(ConstRotors.TRANSFER_POWER);
+    RobotContainer.rotorsInstance.setIntakeMotorPower(ConstRotors.INTAKE_MOTOR_POWER);
   }
 
   // Called every time the scheduler runs while the command is scheduled.

@@ -18,7 +18,7 @@ public class PrepClimb extends Command {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    RobotContainer.rotorsInstance.setClimberSpeed(ConstRotors.EXTEND_CLIMBER_MOTOR_SPEED);
+    RobotContainer.rotorsInstance.setClimberPower(ConstRotors.EXTEND_CLIMBER_MOTOR_POWER);
 
   }
 
@@ -30,7 +30,7 @@ public class PrepClimb extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    RobotContainer.rotorsInstance.setClimberSpeed(0);
+    RobotContainer.rotorsInstance.setClimberPower(0);
 
   }
 

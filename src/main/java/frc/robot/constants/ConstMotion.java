@@ -26,7 +26,7 @@ public class ConstMotion {
 
   public static final double COLOR_ROTATING_PANEL_POWER = 0.5;
 
-  public static final double TRIPLE_ROTATING_PANEL_SPEED = 0.3;
+  public static final double TRIPLE_ROTATING_PANEL_POWER = 0.3;
 
   public static final TalonFXConfiguration HOOD_CONFIGURATION = new TalonFXConfiguration();
 
@@ -57,7 +57,6 @@ public class ConstMotion {
     HOOD_CONFIGURATION.Slot0.kP = 0;
     HOOD_CONFIGURATION.Slot0.GravityType = GravityTypeValue.Arm_Cosine;
     HOOD_CONFIGURATION.Feedback.SensorToMechanismRatio = ((12.0 / 30.0) * (10.0 / 140.0));
-    
 
   }
 }
