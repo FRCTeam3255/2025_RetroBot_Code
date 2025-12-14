@@ -1,5 +1,5 @@
 {
- "name":"InitTrench_ContolPanel",
+ "name":"InitTrench_ControlPanel",
  "version":1,
  "snapshot":{
   "waypoints":[
@@ -13,8 +13,8 @@
  },
  "params":{
   "waypoints":[
-    {"x":{"exp":"initTrenchPP.x", "val":3.048}, "y":{"exp":"initTrenchPP.y", "val":7.010400000000001}, "heading":{"exp":"initTrenchPP.heading", "val":180.0}, "intervals":24, "split":false, "fixTranslation":true, "fixHeading":true, "overrideIntervals":false},
-    {"x":{"exp":"Control_Panel.x", "val":6.096}, "y":{"exp":"Control_Panel.y", "val":7.010400000000001}, "heading":{"exp":"Control_Panel.heading", "val":180.0}, "intervals":40, "split":false, "fixTranslation":true, "fixHeading":true, "overrideIntervals":false}],
+    {"x":{"exp":"InitTrenchPP.x", "val":3.048}, "y":{"exp":"InitTrenchPP.y", "val":7.010400000000001}, "heading":{"exp":"InitTrenchPP.heading", "val":180.0}, "intervals":24, "split":false, "fixTranslation":true, "fixHeading":true, "overrideIntervals":false},
+    {"x":{"exp":"Control_Panel.x", "val":8.2296}, "y":{"exp":"Control_Panel.y", "val":7.010400000000001}, "heading":{"exp":"Control_Panel.heading", "val":180.0}, "intervals":40, "split":false, "fixTranslation":true, "fixHeading":true, "overrideIntervals":false}],
   "constraints":[
     {"from":"first", "to":null, "data":{"type":"StopPoint", "props":{}}, "enabled":true},
     {"from":"last", "to":null, "data":{"type":"StopPoint", "props":{}}, "enabled":true},

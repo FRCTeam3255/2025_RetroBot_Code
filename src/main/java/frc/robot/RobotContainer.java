@@ -83,6 +83,14 @@ public class RobotContainer {
     subDriverStateMachine
         .setDefaultCommand(MANUAL);
 
+    autoFactory = new AutoFactory(
+        subDrivetrain::getPose, // A function that returns the current robot pose
+        subDrivetrain::resetPoseToPose, // A function that resets the current robot pose to the provided Pose2d
+        subDrivetrain::followTrajectory, // The drive subsystem trajectory follower
+        true, // If alliance flipping should be enabled
+        subDriverStateMachine // The drive subsystem
+    );
+
     configDriverBindings();
     configOperatorBindings();
     configAutonomous();
@@ -120,20 +128,12 @@ public class RobotContainer {
     Command Trench6Cell = Commands.sequence(
         new PrepInitLine().withTimeout(.5),
         new Shooting().withTimeout(.5),
-        runPath("InitTrench_ControlPanel").alongWith(new Intaking()).asProxy(),
+        runPath("InitTrench_ControlPanel").alongWith(new Intaking().withTimeout(.5)).asProxy(),
         runPath("ControlPanel_InitTrench").asProxy(),
         new Shooting().withTimeout(.5));
 
     autoChooser.setDefaultOption("PP3CellReverse", PP3CellReverse);
     autoChooser.addOption("Trench6Cell", Trench6Cell);
-
-    autoFactory = new AutoFactory(
-        subDrivetrain::getPose, // A function that returns the current robot pose
-        subDrivetrain::resetPoseToPose, // A function that resets the current robot pose to the provided Pose2d
-        subDrivetrain::followTrajectory, // The drive subsystem trajectory follower
-        true, // If alliance flipping should be enabled
-        subDriverStateMachine // The drive subsystem
-    );
 
     Map<Command, String> autoStartingPoses = Map.ofEntries(
         Map.entry(PP3CellReverse, "InitPP_OffInitPP"),

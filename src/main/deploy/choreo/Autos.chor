@@ -7,19 +7,19 @@
   "poses":{
    "Control_Panel":{
     "x":{
-     "exp":"20 ft",
-     "val":6.096
+     "exp":"27 ft",
+     "val":8.2296
     },
     "y":{
-     "exp":"initTrenchPP.y",
+     "exp":"InitTrenchPP.y",
      "val":7.010400000000001
     },
     "heading":{
-     "exp":"initTrenchPP.heading",
+     "exp":"InitTrenchPP.heading",
      "val":180.0
     }
    },
-   "initPP":{
+   "InitPP":{
     "x":{
      "exp":"10 ft",
      "val":3.048
@@ -33,7 +33,7 @@
      "val":3.141592653589793
     }
    },
-   "initTrenchPP":{
+   "InitTrenchPP":{
     "x":{
      "exp":"10 ft",
      "val":3.048
