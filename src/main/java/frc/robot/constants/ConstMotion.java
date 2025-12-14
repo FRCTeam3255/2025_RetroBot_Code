@@ -24,6 +24,8 @@ public class ConstMotion {
 
   public static final Angle HOOD_ANGLE_PPP = Degrees.of(0.7);
 
+  public static final Angle HOOD_ANGLE_PIL = Degrees.of(.67);
+
   public static final double COLOR_ROTATING_PANEL_SPEED = 0.5;
 
   public static final double TRIPLE_ROTATING_PANEL_SPEED = 0.3;
@@ -57,6 +59,7 @@ public class ConstMotion {
     HOOD_CONFIGURATION.Slot0.kP = 0;
     HOOD_CONFIGURATION.Slot0.GravityType = GravityTypeValue.Arm_Cosine;
     HOOD_CONFIGURATION.Feedback.SensorToMechanismRatio = ((12.0 / 30.0) * (10.0 / 140.0));
+    
 
   }
 }

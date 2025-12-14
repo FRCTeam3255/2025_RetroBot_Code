@@ -5,8 +5,8 @@
 package frc.robot.commands.states;
 
 import static edu.wpi.first.units.Units.Degrees;
+import static edu.wpi.first.units.Units.RPM;
 
-import edu.wpi.first.units.measure.Angle;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.RobotContainer;
 import frc.robot.constants.ConstMotion;
@@ -34,7 +34,7 @@ public class PrepCloseTrench extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    RobotContainer.rotorsInstance.setFlywheelMotorSpeed(0);
+    RobotContainer.rotorsInstance.setFlywheelMotorSpeed(RPM.of (0));
     RobotContainer.motionInstance.setHoodAngle(Degrees.of(0));
   }
 
