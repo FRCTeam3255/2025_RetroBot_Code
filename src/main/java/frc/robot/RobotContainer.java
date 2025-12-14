@@ -136,7 +136,8 @@ public class RobotContainer {
         runPath("ControlPanel_InitTrench").asProxy(),
         new Shooting().withTimeout(.5));
 
-    autoChooser.setDefaultOption("PP3CellReverse", PP3CellReverse);
+    autoChooser.setDefaultOption("Do Nothing", Commands.none());
+    autoChooser.addOption("PP3CellReverse", PP3CellReverse);
     autoChooser.addOption("Trench6Cell", Trench6Cell);
 
     Map<Command, String> autoStartingPoses = Map.ofEntries(
