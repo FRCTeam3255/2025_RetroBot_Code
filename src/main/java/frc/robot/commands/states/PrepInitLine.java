@@ -22,7 +22,7 @@ public class PrepInitLine extends Command {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    RobotContainer.rotorsInstance.setFlywheelMotorPower(ConstRotors.FLYWHEEL_POWER);
+    RobotContainer.rotorsInstance.setFlywheelMotorVelocity(ConstRotors.FLYWHEEL_POWER);
     RobotContainer.motionInstance.setHoodAngle(ConstMotion.HOOD_ANGLE_PIL);
   }
 
@@ -34,7 +34,7 @@ public class PrepInitLine extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    RobotContainer.rotorsInstance.setFlywheelMotorPower(RPM.of(0));
+    RobotContainer.rotorsInstance.setFlywheelMotorVelocity(RPM.of(0));
     RobotContainer.motionInstance.setHoodAngle(Degrees.of(0));
   }
 
