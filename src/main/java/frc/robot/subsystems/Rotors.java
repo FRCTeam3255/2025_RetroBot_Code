@@ -53,7 +53,7 @@ public class Rotors extends SubsystemBase {
 
   }
 
-  public void setFlywheelMotorPower(AngularVelocity speed) {
+  public void setFlywheelMotorVelocity(AngularVelocity speed) {
     rightflywheelMotor.setControl(flywheelVelocityRequest.withVelocity(speed));
     leftflywheelMotor.setControl(new Follower(rightflywheelMotor.getDeviceID(), true));
   }
