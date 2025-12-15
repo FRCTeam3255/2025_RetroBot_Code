@@ -6,15 +6,18 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix6.controls.Follower;
 import com.ctre.phoenix6.controls.MotionMagicVelocityVoltage;
 import com.ctre.phoenix6.hardware.TalonFX;
 
+import edu.wpi.first.epilogue.Logged;
 import edu.wpi.first.units.measure.AngularVelocity;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.RobotMap;
 import frc.robot.RobotMap.mapRotors;
 import frc.robot.constants.ConstRotors;
 
+@Logged
 public class Rotors extends SubsystemBase {
   /** Creates a new Rotors. */
   final TalonFX intakeMotor = new TalonFX(mapRotors.INTAKE_CAN);
@@ -52,7 +55,7 @@ public class Rotors extends SubsystemBase {
 
   public void setFlywheelMotorPower(AngularVelocity speed) {
     rightflywheelMotor.setControl(flywheelVelocityRequest.withVelocity(speed));
-    leftflywheelMotor.setControl(flywheelVelocityRequest.withVelocity(speed));
+    leftflywheelMotor.setControl(new Follower(rightflywheelMotor.getDeviceID(), true));
   }
 
   public void setTransferMotorPower(double power) {

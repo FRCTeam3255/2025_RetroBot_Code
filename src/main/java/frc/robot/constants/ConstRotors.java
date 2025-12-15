@@ -42,17 +42,15 @@ public class ConstRotors {
     HOPPER_LEFT_CONFIGURATION.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;
 
     FLYWHEEL_CONFIGURATION.MotorOutput.NeutralMode = NeutralModeValue.Coast;
-    FLYWHEEL_CONFIGURATION.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;
+    FLYWHEEL_CONFIGURATION.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
 
     CLIMBER_CONFIGURATION.MotorOutput.NeutralMode = NeutralModeValue.Brake;
     CLIMBER_CONFIGURATION.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
 
-    FLYWHEEL_CONFIGURATION.Slot0.kS = 0;
-    FLYWHEEL_CONFIGURATION.Slot0.kV = 0;
-    FLYWHEEL_CONFIGURATION.Slot0.kS = 0;
-    FLYWHEEL_CONFIGURATION.Slot0.kV = 0;
+    FLYWHEEL_CONFIGURATION.Slot0.kS = 0.14;
+    FLYWHEEL_CONFIGURATION.Slot0.kV = 0.11167;
     FLYWHEEL_CONFIGURATION.Slot0.kA = 0;
-    FLYWHEEL_CONFIGURATION.Slot0.kP = 0;
+    FLYWHEEL_CONFIGURATION.Slot0.kP = 0.5;
 
     FLYWHEEL_CONFIGURATION.MotionMagic.MotionMagicCruiseVelocity = 60;
     FLYWHEEL_CONFIGURATION.MotionMagic.MotionMagicAcceleration = 600;
