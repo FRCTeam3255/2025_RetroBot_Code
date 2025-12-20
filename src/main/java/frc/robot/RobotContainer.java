@@ -115,6 +115,8 @@ public class RobotContainer {
 
     conDriver.btn_Start.whileTrue(new PrepClimb());
     conDriver.btn_Back.whileTrue(new Climbing());
+
+    
   }
 
   public void configAutonomous() {
@@ -167,6 +169,7 @@ public class RobotContainer {
     // Add operator bindings here if needed
     conOperator.btn_RightTrigger.whileTrue(new Shooting());
     conOperator.btn_LeftTrigger.whileTrue(new Intaking());
+    conOperator.btn_A.whileTrue(new EjectIntaking());
     conOperator.btn_Y.whileTrue(new PrepPowerPort());
     conOperator.btn_B.whileTrue(new PrepFarTrench());
     conOperator.btn_X.whileTrue(new PrepCloseTrench());
