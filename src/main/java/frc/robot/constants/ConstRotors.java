@@ -21,7 +21,7 @@ public class ConstRotors {
   public static final double HOPPER_RIGHT_MOTOR_SPEED = 1;
   public static final double HOPPER_LEFT_MOTOR_SPEED = 0;
   public static final double INTAKE_MOTOR_SPEED = 1;
-  public static final double EJECT_INTAKE_MOTOR_SPEED = -1;
+  public static final double EJECT_MOTOR_SPEED = -1;
   public static final AngularVelocity FLYWHEEL_SPEED = RPM.of(1);
   public static final TalonFXConfiguration TRANSFER_CONFIGURATION = new TalonFXConfiguration();
   public static final double TRANSFER_SPEED = 1;
