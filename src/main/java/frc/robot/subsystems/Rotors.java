@@ -6,18 +6,15 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
-import com.ctre.phoenix6.controls.Follower;
 import com.ctre.phoenix6.controls.MotionMagicVelocityVoltage;
 import com.ctre.phoenix6.hardware.TalonFX;
 
-import edu.wpi.first.epilogue.Logged;
 import edu.wpi.first.units.measure.AngularVelocity;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.RobotMap;
 import frc.robot.RobotMap.mapRotors;
 import frc.robot.constants.ConstRotors;
 
-@Logged
 public class Rotors extends SubsystemBase {
   /** Creates a new Rotors. */
   final TalonFX intakeMotor = new TalonFX(mapRotors.INTAKE_CAN);
@@ -27,6 +24,7 @@ public class Rotors extends SubsystemBase {
   final TalonFX leftflywheelMotor = new TalonFX(mapRotors.LEFT_FLYWHEEL_CAN);
   final TalonSRX transferMotor = new TalonSRX(mapRotors.TRANSFER_CAN);
   final TalonFX climber = new TalonFX(RobotMap.mapRotors.CLIMBER_CAN);
+  
 
   public Rotors() {
     intakeMotor.getConfigurator().apply(ConstRotors.INTAKE_CONFIGURATION);
@@ -34,11 +32,12 @@ public class Rotors extends SubsystemBase {
     leftHopperMotor.getConfigurator().apply(ConstRotors.HOPPER_LEFT_CONFIGURATION);
     rightflywheelMotor.getConfigurator().apply(ConstRotors.FLYWHEEL_CONFIGURATION);
     leftflywheelMotor.getConfigurator().apply(ConstRotors.FLYWHEEL_CONFIGURATION);
-    transferMotor.configFactoryDefault();
-    climber.getConfigurator().apply(ConstRotors.CLIMBER_CONFIGURATION);
+  transferMotor.configFactoryDefault();
+   climber.getConfigurator().apply(ConstRotors.CLIMBER_CONFIGURATION);
   }
 
   final MotionMagicVelocityVoltage flywheelVelocityRequest = new MotionMagicVelocityVoltage(0);
+
 
   public void setIntakeMotorSpeed(double speed) {
     intakeMotor.set(speed);
@@ -48,18 +47,17 @@ public class Rotors extends SubsystemBase {
     rightHopperMotor.set(speed);
   }
 
-  public void setHopperLeftMotorSpeed(double speed) {
+  public void setHopperLeftMotorSpeed(double speed){
     leftHopperMotor.set(speed);
 
   }
-
   public void setFlywheelMotorSpeed(AngularVelocity speed) {
     rightflywheelMotor.setControl(flywheelVelocityRequest.withVelocity(speed));
-    leftflywheelMotor.setControl(new Follower(rightflywheelMotor.getDeviceID(), true));
+    leftflywheelMotor.setControl(flywheelVelocityRequest.withVelocity(speed));
   }
 
   public void setTransferMotorSpeed(double speed) {
-    transferMotor.set(ControlMode.PercentOutput, speed);
+    transferMotor.set(ControlMode.PercentOutput,speed);
   }
 
   @Override
@@ -67,9 +65,9 @@ public class Rotors extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 
-  public void setClimberSpeed(double speed) {
-    climber.set(speed);
+    public void setClimberSpeed(double speed) {
+      climber.set(speed);
+  
+    }
 
   }
-
-}

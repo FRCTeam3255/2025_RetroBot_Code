@@ -21,7 +21,8 @@ public class ConstRotors {
   public static final double HOPPER_RIGHT_MOTOR_SPEED = 1;
   public static final double HOPPER_LEFT_MOTOR_SPEED = 0;
   public static final double INTAKE_MOTOR_SPEED = 1;
-  public static final AngularVelocity FLYWHEEL_SPEED = RPM.of(6000);
+  public static final double EJECT_MOTOR_SPEED = -1;
+  public static final AngularVelocity FLYWHEEL_SPEED = RPM.of(1);
   public static final TalonFXConfiguration TRANSFER_CONFIGURATION = new TalonFXConfiguration();
   public static final double TRANSFER_SPEED = 1;
   public static final double EXTEND_CLIMBER_MOTOR_SPEED = 0.5;
@@ -42,20 +43,22 @@ public class ConstRotors {
     HOPPER_LEFT_CONFIGURATION.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;
 
     FLYWHEEL_CONFIGURATION.MotorOutput.NeutralMode = NeutralModeValue.Coast;
-    FLYWHEEL_CONFIGURATION.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
+    FLYWHEEL_CONFIGURATION.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;
 
     CLIMBER_CONFIGURATION.MotorOutput.NeutralMode = NeutralModeValue.Brake;
     CLIMBER_CONFIGURATION.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
 
-    FLYWHEEL_CONFIGURATION.Slot0.kS = 0.14;
-    FLYWHEEL_CONFIGURATION.Slot0.kV = 0.11167;
+    FLYWHEEL_CONFIGURATION.Slot0.kS = 0; 
+    FLYWHEEL_CONFIGURATION.Slot0.kV = 0;
+    FLYWHEEL_CONFIGURATION.Slot0.kS = 0; 
+    FLYWHEEL_CONFIGURATION.Slot0.kV = 0;
     FLYWHEEL_CONFIGURATION.Slot0.kA = 0;
-    FLYWHEEL_CONFIGURATION.Slot0.kP = 0.5;
-
+    FLYWHEEL_CONFIGURATION.Slot0.kP = 0;
+    
     FLYWHEEL_CONFIGURATION.MotionMagic.MotionMagicCruiseVelocity = 60;
     FLYWHEEL_CONFIGURATION.MotionMagic.MotionMagicAcceleration = 600;
     FLYWHEEL_CONFIGURATION.MotionMagic.MotionMagicJerk = 6000;
-
+  
   }
 
 }

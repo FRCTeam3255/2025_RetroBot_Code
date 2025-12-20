@@ -14,7 +14,6 @@ import com.frcteam3255.joystick.SN_XboxController;
 import choreo.auto.AutoFactory;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
-import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -23,6 +22,7 @@ import edu.wpi.first.wpilibj2.command.DeferredCommand;
 import frc.robot.RobotMap.mapControllers;
 import frc.robot.commands.states.Climbing;
 import frc.robot.commands.states.ColorRotatingPanel;
+import frc.robot.commands.states.EjectIntaking;
 import frc.robot.commands.states.Intaking;
 import frc.robot.commands.states.PrepClimb;
 import frc.robot.commands.states.PrepCloseTrench;
@@ -50,17 +50,13 @@ public class RobotContainer {
 
   private final SN_XboxController conDriver = new SN_XboxController(mapControllers.DRIVER_USB);
   private final SN_XboxController conOperator = new SN_XboxController(mapControllers.OPERATOR_USB);
-  private static DigitalInput isPracticeBot = new DigitalInput(RobotMap.PRAC_BOT_DIO);
+
   private final Drivetrain subDrivetrain = new Drivetrain();
   public final static Rotors rotorsInstance = new Rotors();
   private final DriverStateMachine subDriverStateMachine = new DriverStateMachine(subDrivetrain);
   private final StateMachine subStateMachine = new StateMachine(subDrivetrain);
   private final RobotPoses robotPose = new RobotPoses(subDrivetrain);
   public static final Motion motionInstance = new Motion();
-
-  final Motion loggedMotion = motionInstance;
-  final Rotors loggedRotors = rotorsInstance;
-
   Command TRY_NONE = Commands.deferredProxy(
       () -> subStateMachine.tryState(RobotState.NONE));
 
@@ -120,6 +116,8 @@ public class RobotContainer {
 
     conDriver.btn_Start.whileTrue(new PrepClimb());
     conDriver.btn_Back.whileTrue(new Climbing());
+
+    
   }
 
   public void configAutonomous() {
@@ -137,8 +135,7 @@ public class RobotContainer {
         runPath("ControlPanel_InitTrench").asProxy(),
         new Shooting().withTimeout(.5));
 
-    autoChooser.setDefaultOption("Do Nothing", Commands.none());
-    autoChooser.addOption("PP3CellReverse", PP3CellReverse);
+    autoChooser.setDefaultOption("PP3CellReverse", PP3CellReverse);
     autoChooser.addOption("Trench6Cell", Trench6Cell);
 
     Map<Command, String> autoStartingPoses = Map.ofEntries(
@@ -165,10 +162,6 @@ public class RobotContainer {
         .alongWith(Commands.runOnce(() -> subDriverStateMachine.setDriverState(DriverState.CHOREO)));
   }
 
-  public static boolean isPracticeBot() {
-    return !isPracticeBot.get();
-  }
-  
   public Command getAutonomousCommand() {
     return autoChooser.getSelected();
   }
@@ -177,6 +170,7 @@ public class RobotContainer {
     // Add operator bindings here if needed
     conOperator.btn_RightTrigger.whileTrue(new Shooting());
     conOperator.btn_LeftTrigger.whileTrue(new Intaking());
+    conOperator.btn_A.whileTrue(new EjectIntaking());
     conOperator.btn_Y.whileTrue(new PrepPowerPort());
     conOperator.btn_B.whileTrue(new PrepFarTrench());
     conOperator.btn_X.whileTrue(new PrepCloseTrench());

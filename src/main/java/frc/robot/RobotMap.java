@@ -3,15 +3,13 @@ package frc.robot;
 // Contains all ports on our robot
 
 public class RobotMap {
-  public static final int PRAC_BOT_DIO = 0;
   public static class mapControllers {
     public static final int DRIVER_USB = 0;
     public static final int OPERATOR_USB = 1;
   }
 
   public static class mapDrivetrain {
-    public static final String CAN_BUS_NAME = "rio";
-    public static final String PROTO_CAN_BUS_NAME = "Swerve";
+    public static final String CAN_BUS_NAME = "Swerve";
     public static final int PIGEON_CAN = 0;
 
     // Module 0
