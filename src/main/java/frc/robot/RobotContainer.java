@@ -124,8 +124,10 @@ public class RobotContainer {
 
   public void configAutonomous() {
     Command PP3CellReverse = Commands.sequence(
-        new PrepInitLine().withTimeout(.5),
-        new Shooting().withTimeout(.5),
+        new PrepInitLine().withTimeout(3)
+            .alongWith(
+                Commands.waitSeconds(2)
+                    .andThen(new Shooting().withTimeout(3))),
         runPath("InitPP_OffInitPP").asProxy()
 
     );
@@ -168,7 +170,7 @@ public class RobotContainer {
   public static boolean isPracticeBot() {
     return !isPracticeBot.get();
   }
-  
+
   public Command getAutonomousCommand() {
     return autoChooser.getSelected();
   }
