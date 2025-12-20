@@ -22,6 +22,7 @@ import edu.wpi.first.wpilibj2.command.DeferredCommand;
 import frc.robot.RobotMap.mapControllers;
 import frc.robot.commands.states.Climbing;
 import frc.robot.commands.states.ColorRotatingPanel;
+import frc.robot.commands.states.EjectIntaking;
 import frc.robot.commands.states.Intaking;
 import frc.robot.commands.states.PrepClimb;
 import frc.robot.commands.states.PrepCloseTrench;
