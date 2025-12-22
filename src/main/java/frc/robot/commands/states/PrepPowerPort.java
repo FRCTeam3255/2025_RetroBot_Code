@@ -22,7 +22,7 @@ public class PrepPowerPort extends Command {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    RobotContainer.rotorsInstance.setFlywheelMotorVelocity(ConstRotors.FLYWHEEL_POWER);
+    RobotContainer.rotorsInstance.setFlywheelMotorVelocity(ConstRotors.FLYWHEEL_VELOCITY);
     RobotContainer.motionInstance.setHoodAngle(ConstMotion.HOOD_ANGLE_PPP);
   }
 

@@ -21,7 +21,7 @@ public class ConstRotors {
   public static final double HOPPER_RIGHT_MOTOR_POWER = 1;
   public static final double HOPPER_LEFT_MOTOR_POWER = 0;
   public static final double INTAKE_MOTOR_POWER = 1;
-  public static final AngularVelocity FLYWHEEL_POWER = RPM.of(1);
+  public static final AngularVelocity FLYWHEEL_VELOCITY = RPM.of(1);
   public static final TalonFXConfiguration TRANSFER_CONFIGURATION = new TalonFXConfiguration();
   public static final double TRANSFER_POWER = 1;
   public static final double EXTEND_CLIMBER_MOTOR_POWER = 0.5;
