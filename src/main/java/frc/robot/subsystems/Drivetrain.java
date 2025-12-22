@@ -147,7 +147,7 @@ public class Drivetrain extends SN_SuperSwerve {
     super.periodic();
 
     for (SN_SwerveModule mod : modules) {
-      SmartDashboard.putNumber("Drivetrain/Module " + mod.moduleNumber + "/Desired Speed (FPS)",
+      SmartDashboard.putNumber("Drivetrain/Module " + mod.moduleNumber + "/Desired  (FPS)",
           Units.Meters.convertFrom(Math.abs(getDesiredModuleStates()[mod.moduleNumber].speedMetersPerSecond),
               Units.Feet));
       SmartDashboard.putNumber("Drivetrain/Module " + mod.moduleNumber + "/Actual Speed (FPS)",

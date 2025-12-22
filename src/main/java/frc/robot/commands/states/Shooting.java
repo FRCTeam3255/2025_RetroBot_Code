@@ -19,10 +19,10 @@ public class Shooting extends Command {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    RobotContainer.rotorsInstance.setHopperRightMotorSpeed(ConstRotors.HOPPER_RIGHT_MOTOR_SPEED);
-    RobotContainer.rotorsInstance.setHopperLeftMotorSpeed(ConstRotors.HOPPER_LEFT_MOTOR_SPEED);
-    RobotContainer.rotorsInstance.setTransferMotorSpeed(ConstRotors.TRANSFER_SPEED);
-    RobotContainer.rotorsInstance.setIntakeMotorSpeed(ConstRotors.INTAKE_MOTOR_SPEED);
+    RobotContainer.rotorsInstance.setHopperRightMotorPower(ConstRotors.HOPPER_RIGHT_MOTOR_POWER);
+    RobotContainer.rotorsInstance.setHopperLeftMotorPower(ConstRotors.HOPPER_LEFT_MOTOR_POWER);
+    RobotContainer.rotorsInstance.setTransferMotorPower(ConstRotors.TRANSFER_POWER);
+    RobotContainer.rotorsInstance.setIntakeMotorPower(ConstRotors.INTAKE_MOTOR_POWER);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -33,10 +33,10 @@ public class Shooting extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    RobotContainer.rotorsInstance.setHopperRightMotorSpeed(0);
-    RobotContainer.rotorsInstance.setHopperLeftMotorSpeed(0);
-    RobotContainer.rotorsInstance.setTransferMotorSpeed(0);
-    RobotContainer.rotorsInstance.setIntakeMotorSpeed(0);
+    RobotContainer.rotorsInstance.setHopperRightMotorPower(0);
+    RobotContainer.rotorsInstance.setHopperLeftMotorPower(0);
+    RobotContainer.rotorsInstance.setTransferMotorPower(0);
+    RobotContainer.rotorsInstance.setIntakeMotorPower(0);
   }
 
   // Returns true when the command should end.
